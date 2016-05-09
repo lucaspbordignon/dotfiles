@@ -130,7 +130,8 @@ bindsym $mod+Shift+r+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
+# Turn off the pc.
+bindsym $mod+Control+1 exec shutdown -h 0
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -164,7 +165,7 @@ bar {
 	status_command i3blocks -c ~/.i3/i3blocks.conf
   colors {
     separator #1ac152
-    background #2d2d2d
+    background #1e1e1e
     statusline #839496
     focused_workspace #fdf6e3 #2d2d2d #fdf6e3
     active_workspace #fdf6e3 #707070 #fdf6e3
