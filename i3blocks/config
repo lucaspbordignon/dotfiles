@@ -184,7 +184,7 @@ bindsym $mod+Shift+c exec chromium
 bindsym $mod+Shift+a exec atom
 bindsym $mod+Control+j exec intellij-idea-ultimate-edition
 bindsym $mod+Shift+g exec steam
-bindsym $mod+Shift+t exec transmission-gtk
+bindsym $mod+Shift+t exec qbittorrent
 bindsym $mod+Shift+f exec nautilus
 
 # Media player controls
