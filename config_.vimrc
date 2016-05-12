@@ -1,5 +1,6 @@
 set number " Line numbers
 set mouse=a " Mouse support
+set laststatus=2 " Enable airline
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -23,3 +24,4 @@ filetype plugin indent on
 colorscheme tropikos
 
 autocmd FileType python setlocal completeopt-=preview " Disable the jedi autocomplete popup
+let g:airline#extensions#tabline#enabled = 1
