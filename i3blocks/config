@@ -177,10 +177,10 @@ client.focused #2d2d2d #2d2d2d #2d2d2d #2d2d2d
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #4D4D4D #4D4D4D #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+client.urgent #942525 #942525 #fdf6e3 #dc322f
 
 bindsym $mod+Shift+s exec spotify --force-device-scale-factor=1.0000001    #Temporary solution.
-bindsym $mod+Shift+c exec chromium
+bindsym $mod+Shift+c exec google-chrome-stable
 bindsym $mod+Shift+a exec atom
 bindsym $mod+Control+j exec intellij-idea-ultimate-edition
 bindsym $mod+Shift+g exec steam
