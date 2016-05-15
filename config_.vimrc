@@ -30,10 +30,16 @@ autocmd FileType python setlocal completeopt-=preview " Disable the jedi autocom
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='term'
 let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#syntastic#enabled=1 " Syntastic integration
+let g:syntastic_check_on_open=1 " Check the file when open(Not only on save)
+let g:syntastic_python_python_exec='/usr/bin/python3.5'
 
-
+" Syntastic
+let g:syntastic_error_symbol='✗'
+let g:syntastic_style_error_symbol='✗'
+let g:syntastic_python_checkers=['pep8']
 " air-line
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
