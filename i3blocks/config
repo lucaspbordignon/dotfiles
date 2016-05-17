@@ -34,9 +34,10 @@ bindsym $mod+Return exec xterm
 #####Auto Start
 #
 exec --no-startup-id volumeicon
-exec --no-startup-id compton -b
+exec --no-startup-id compton -b 
 exec --no-startup-id nm-applet
 exec --no-startup-id syndaemon -i 1 -t -d
+exec --no-startup-id xset s off
 exec_always ~/.random_wallpaper.sh
 
 
@@ -181,6 +182,7 @@ client.urgent #942525 #942525 #fdf6e3 #dc322f
 
 bindsym $mod+Shift+s exec spotify --force-device-scale-factor=1.0000001    #Temporary solution.
 bindsym $mod+Shift+c exec google-chrome-stable
+bindsym $mod+Shift+v exec vivaldi-stable
 bindsym $mod+Shift+a exec atom
 bindsym $mod+Control+j exec intellij-idea-ultimate-edition
 bindsym $mod+Shift+g exec steam
