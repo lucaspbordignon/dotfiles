@@ -106,7 +106,7 @@ bindsym $mod+a focus parent
 
 # switch to workspace
 bindsym $mod+1 workspace 1: Web
-bindsym $mod+2 workspace 2: Spotify
+bindsym $mod+2 workspace 2:  Spotify
 bindsym $mod+3 workspace 3: Others
 bindsym $mod+4 workspace 4:  Code
 bindsym $mod+5 workspace 5:  Code
@@ -118,7 +118,7 @@ bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1: Web
-bindsym $mod+Shift+2 move container to workspace 2: Spotify
+bindsym $mod+Shift+2 move container to workspace 2:  Spotify
 bindsym $mod+Shift+3 move container to workspace 3: Others
 bindsym $mod+Shift+4 move container to workspace 4:  Code
 bindsym $mod+Shift+5 move container to workspace 5:  Code
@@ -183,7 +183,7 @@ client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #4D4D4D #4D4D4D #93a1a1 #586e75
 client.urgent #942525 #942525 #fdf6e3 #dc322f
 
-bindsym $mod+Shift+s workspace 2: Spotify; exec spotify 
+bindsym $mod+Shift+s workspace 2:  Spotify; exec spotify 
 bindsym $mod+Shift+c workspace 1: Web; exec google-chrome-beta
 bindsym $mod+Shift+v exec vivaldi-snapshot 
 bindsym $mod+Shift+a workspace 4:  Code; exec atom
