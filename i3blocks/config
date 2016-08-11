@@ -13,11 +13,11 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 9
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -33,15 +33,14 @@ floating_modifier $mod
 bindsym $mod+Return exec xterm
 
 
-#####Auto Start
+##### Auto Start
 #
-exec --no-startup-id volumeicon
-exec --no-startup-id compton -b
+exec --no-startup-id volumeicon		# Applets
 exec --no-startup-id nm-applet
-exec --no-startup-id syndaemon -i 1 -t -d
-exec --no-startup-id xset s off
+exec --no-startup-id compton -b		# Composite Manager
+exec --no-startup-id syndaemon -i 1 -t -d	# Disable touchpad while typing
 exec --no-startup-id dropbox
-exec_always ~/.random_wallpaper.sh
+exec --no-startup-id feh --bg-fill ~/Pictures/Background/Anto_Chamberlain_Snowboard.jpg
 
 
 # kill focused window
@@ -49,6 +48,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -101,9 +101,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
 # switch to workspace
 bindsym $mod+1 workspace 1: Web
 bindsym $mod+2 workspace 2:  Spotify
@@ -134,8 +131,7 @@ bindsym $mod+Shift+r+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-# Turn off the pc.
-bindsym $mod+Control+1 exec shutdown -h 0
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -165,36 +161,47 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
- 	font pango:Source Sans Pro-10 10
-	status_command i3blocks -c ~/.i3/i3blocks.conf
+ 	font pango:DejaVu Sans Mono, Icons 9
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
   colors {
     separator #84bd00
     background #000000
     statusline #839496
-    focused_workspace #1ac152 #2d2d2d #1ac152
-    active_workspace #fdf6e3 #707070 #1ac152
+    focused_workspace #84bd00 #2d2d2d #84bd00
+    active_workspace #fdf6e3 #707070 #84bd00
     inactive_workspace #002b36 #2d2d2d #8b8b8b
     urgent_workspace #84bd00 #84bd00 #fdf6e3
   }
 }
-client.focused #000000 #000000 #1ac152 #2d2d2d
+client.focused #000000 #000000 #84bd00 #2d2d2d
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
 client.unfocused #4D4D4D #4D4D4D #93a1a1 #586e75
 client.urgent #84bd00 #84bd00 #fdf6e3 #dc322f
 
+# Turn off the pc.
+bindsym $mod+Control+1 exec shutdown -h 0
+
+# Lock the screen.
+bindsym $mod+Control+2 exec i3lock -i ~/Pictures/Blue-Screen.png -u
+
+# Launchers
+bindsym $mod+Shift+c workspace 1: Web; exec google-chrome-stable 
 bindsym $mod+Shift+s workspace 2:  Spotify; exec spotify 
-bindsym $mod+Shift+c workspace 1: Web; exec google-chrome-beta
-bindsym $mod+Shift+v exec vivaldi-snapshot 
+bindsym $mod+Shift+w workspace 3: Others; exec franz
+bindsym $mod+Shift+g workspace 3: Others; exec primusrun steam
 bindsym $mod+Shift+a workspace 4:  Code; exec atom
 bindsym $mod+Control+j workspace 4:  Code; exec intellij-idea-ultimate-edition
-bindsym $mod+Shift+g exec steam
 bindsym $mod+Shift+t exec qbittorrent
-bindsym $mod+Shift+f exec nautilus
-bindsym $mod+Shift+w workspace 3: Others; exec franz
+bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+p exec evince
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Brightness controls
+bindsym XF86WWW exec xbacklight -inc 10 
+bindsym XF86Mail exec xbacklight -dec 10
