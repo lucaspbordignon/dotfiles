@@ -41,6 +41,7 @@ exec --no-startup-id compton -b		# Composite Manager
 exec --no-startup-id syndaemon -i 1 -t -d	# Disable touchpad while typing
 exec --no-startup-id dropbox
 exec --no-startup-id feh --bg-fill ~/Pictures/Background/Anto_Chamberlain_Snowboard.jpg
+exec --no-startup-id xset s noblank     # Disable the default blankscreen behavior
 
 # Disable title bar
 new_window pixel 1
@@ -185,7 +186,7 @@ client.urgent #84bd00 #84bd00 #fdf6e3 #dc322f
 bindsym $mod+Control+1 exec shutdown -h 0
 
 # Lock the screen.
-bindsym $mod+Control+2 exec i3lock -i ~/Pictures/Blue-Screen.png -u
+bindsym $mod+Control+2 exec i3lock -i ~/Pictures/Blue-Screen.png -u -e
 
 # Launchers
 bindsym $mod+Shift+c workspace 1: Web; exec google-chrome-stable 
