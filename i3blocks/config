@@ -5,6 +5,16 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+##### Requirements
+# ttf-dejavu    For DejaVu Sans Mono
+# volumeicon    Volume applet
+# networkmanager
+# network-manager-applet
+# compton       
+# feh
+#
+
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -41,7 +51,7 @@ exec --no-startup-id compton -b		# Composite Manager
 exec --no-startup-id syndaemon -i 1 -t -d	# Disable touchpad while typing
 exec --no-startup-id dropbox
 exec --no-startup-id feh --bg-fill ~/Pictures/Background/Anto_Chamberlain_Snowboard.jpg
-exec --no-startup-id xset s noblank     # Disable the default blankscreen behavior
+
 
 # Disable title bar
 new_window pixel 1
@@ -191,7 +201,7 @@ bindsym $mod+Control+2 exec i3lock -i ~/Pictures/Blue-Screen.png -u -e
 # Launchers
 bindsym $mod+Shift+c workspace 1: Web; exec google-chrome-stable 
 bindsym $mod+Shift+s workspace 2:  Spotify; exec spotify 
-bindsym $mod+Shift+w workspace 3: Others; exec franz
+bindsym $mod+Shift+w workspace 3: Others; exec telegram-desktop
 bindsym $mod+Shift+g workspace 3: Others; exec primusrun steam
 bindsym $mod+Shift+a workspace 4:  Code; exec atom
 bindsym $mod+Control+j workspace 4:  Code; exec intellij-idea-ultimate-edition
@@ -206,5 +216,6 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness controls
+# Requires xorg-xbacklight package
 bindsym XF86WWW exec xbacklight -inc 10 
 bindsym XF86Mail exec xbacklight -dec 10
