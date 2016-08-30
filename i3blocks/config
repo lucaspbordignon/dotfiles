@@ -12,6 +12,8 @@
 # network-manager-applet
 # compton       
 # feh
+# xorg-xbacklight
+# playerctl(AUR)
 #
 
 
@@ -210,12 +212,9 @@ bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+p exec evince
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness controls
-# Requires xorg-xbacklight package
 bindsym XF86WWW exec xbacklight -inc 10 
 bindsym XF86Mail exec xbacklight -dec 10
