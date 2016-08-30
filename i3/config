@@ -184,7 +184,7 @@ bar {
     statusline #839496
     focused_workspace #84bd00 #2d2d2d #84bd00
     active_workspace #fdf6e3 #707070 #84bd00
-    inactive_workspace #002b36 #2d2d2d #8b8b8b
+    inactive_workspace #2d2d2d #2d2d2d #8b8b8b
     urgent_workspace #84bd00 #84bd00 #fdf6e3
   }
 }
