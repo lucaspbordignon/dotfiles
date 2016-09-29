@@ -1,13 +1,15 @@
+"
+" Using the 'gvim' package to enable the clipboard feature.
+"
+
 set number " Line numbers
 set mouse=a " Mouse support
 set laststatus=2 " Enable airline
-set expandtab
-set tabstop=4
-set softtabstop=4
-set autoindent
-set shiftwidth=4
+set expandtab " Insert spaces instead of tab
+set softtabstop=4 " Set the width of the 'spaces tab' 
+set tabstop=4 " Width of a hard tab(for visualization)
+set shiftwidth=4 " Set size of 'reindent' operation (<< and >>)
 set clipboard=unnamedplus   " Set system clipboard as vim clipboard
-set backspace=indent,eol,start
 
 " Theme
 colorscheme tropikos
