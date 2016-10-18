@@ -1,9 +1,5 @@
 #
-#
-#
-# /etc/xdg/termite/
-#
-#
+# ~/.config/termite/
 #
 
 [options]
