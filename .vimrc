@@ -43,7 +43,7 @@ let g:syntastic_python_python_exec='/usr/bin/python3.5'
 
 " air-line
 let g:airline_powerline_fonts = 1
-let g:airline_theme='term'
+let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#syntastic#enabled=1 " Syntastic integration
