@@ -25,6 +25,7 @@ Plugin 'Syntastic' " Syntax checker
 Plugin 'L9'
 Plugin 'bling/vim-airline' " Status bar
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ervandew/supertab'
 
 call vundle#end()
 filetype plugin indent on
