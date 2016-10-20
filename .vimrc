@@ -22,17 +22,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plugin 'Syntastic' " Syntax checker
-Plugin 'L9'
 Plugin 'bling/vim-airline' " Status bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ervandew/supertab'
 
 call vundle#end()
 filetype plugin indent on
-
-" Pydiction autocomplete (python).
-" https://github.com/vim-scripts/Pydiction 
-let g:pydiction_location = '/home/lucasbordignon/.vim/bundle/pydiction/complete-dict'
 
 " Syntastic
 let g:syntastic_error_symbol='!'
