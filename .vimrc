@@ -11,6 +11,9 @@ set tabstop=4 " Width of a hard tab(for visualization)
 set shiftwidth=4 " Set size of 'reindent' operation (<< and >>)
 set clipboard=unnamedplus   " Set system clipboard as vim clipboard
 
+" Remove the Ex mode, when press 'Q'
+nnoremap Q <nop>e
+
 " Theme
 colorscheme tropikos
 syntax on
@@ -36,6 +39,9 @@ let g:syntastic_python_checkers=['flake8']    " pip install flake8
 let g:syntastic_python_flake8_args='--ignore=E501,E225'     " Disable 'line too long'
 let g:syntastic_check_on_open=1 " Check the file when open(Not only on save)
 let g:syntastic_python_python_exec='/usr/bin/python3.5'
+
+" Supertab
+let g:SuperTabCrMapping=1   " Doesn't create a new line when insert a word.
 
 " air-line
 let g:airline_powerline_fonts = 1
