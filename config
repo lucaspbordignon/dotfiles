@@ -40,7 +40,7 @@ cursor = #dcdccc
 cursor_foreground = #dcdccc
 foreground = #f9f9f9
 foreground_bold = #ffffff
-background = rgba(54, 54, 54, 0.95)
+background = rgba(54, 54, 54, 0.96)
 
 # if unset, will reverse foreground and background
 highlight = #2f2f2f
