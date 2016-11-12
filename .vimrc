@@ -34,7 +34,7 @@ filetype plugin indent on
 
 " Syntastic
 let g:syntastic_error_symbol='!'
-let g:syntastic_style_error_symbol='!'
+let g:syntastic_style_error_symbol='⚠️'
 let g:syntastic_python_checkers=['flake8']    " pip install flake8
 let g:syntastic_python_flake8_args='--ignore=E501,E225'     " Disable 'line too long'
 let g:syntastic_check_on_open=1 " Check the file when open(Not only on save)
@@ -54,19 +54,13 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " airline symbols
@@ -76,4 +70,3 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''

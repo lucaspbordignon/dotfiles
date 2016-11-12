@@ -187,7 +187,6 @@ client.unfocused #4D4D4D #4D4D4D #93a1a1 #586e75
 client.urgent #84bd00 #84bd00 #fdf6e3 #dc322f
 
 # Turn off the pc.
-# bindsym $mod+Control+1 exec shutdown -h 0
 bindsym $mod+Control+1 exec poweroff
 
 # Lock the screen.
