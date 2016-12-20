@@ -1,0 +1,1 @@
+/home/lucasbordignon/.config/fish/config.fish
