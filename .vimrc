@@ -28,6 +28,7 @@ Plugin 'Syntastic' " Syntax checker
 Plugin 'bling/vim-airline' " Status bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ervandew/supertab'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -36,7 +37,7 @@ filetype plugin indent on
 let g:syntastic_error_symbol='!'
 let g:syntastic_style_error_symbol='⚠️'
 let g:syntastic_python_checkers=['flake8']    " pip install flake8
-let g:syntastic_python_flake8_args='--ignore=E501,E225'     " Disable 'line too long'
+let g:syntastic_python_flake8_args='--ignore=E501,E225,E114,F403,F405'     " Disable 'line too long' and 'indentation not multiple 4'
 let g:syntastic_check_on_open=1 " Check the file when open(Not only on save)
 let g:syntastic_python_python_exec='/usr/bin/python3.5'
 

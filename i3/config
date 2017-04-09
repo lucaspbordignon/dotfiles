@@ -28,7 +28,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 9
+font pango:Cantarell 9
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -46,7 +46,7 @@ bindsym $mod+Return exec termite
 
 ##### Auto Start
 #
-exec --no-startup-id feh --bg-fill ~/Pictures/Background/Whistler.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/Background/space.jpg
 exec --no-startup-id volumeicon		# Applets
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -b		# Composite Manager
@@ -110,24 +110,24 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # switch to workspace
-bindsym $mod+1 workspace 1: Web
-bindsym $mod+2 workspace 2:  Spotify
-bindsym $mod+3 workspace 3: Others
-bindsym $mod+4 workspace 4:  Code
-bindsym $mod+5 workspace 5:  Code
-bindsym $mod+6 workspace 6:  Code
+bindsym $mod+1 workspace Web
+bindsym $mod+2 workspace  Spotify
+bindsym $mod+3 workspace Others
+bindsym $mod+4 workspace 
+bindsym $mod+5 workspace 
+bindsym $mod+6 workspace 
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1: Web
-bindsym $mod+Shift+2 move container to workspace 2:  Spotify
-bindsym $mod+Shift+3 move container to workspace 3: Others
-bindsym $mod+Shift+4 move container to workspace 4:  Code
-bindsym $mod+Shift+5 move container to workspace 5:  Code
-bindsym $mod+Shift+6 move container to workspace 6:  Code
+bindsym $mod+Shift+1 move container to workspace Web
+bindsym $mod+Shift+2 move container to workspace  Spotify
+bindsym $mod+Shift+3 move container to workspace Others
+bindsym $mod+Shift+4 move container to workspace 
+bindsym $mod+Shift+5 move container to workspace 
+bindsym $mod+Shift+6 move container to workspace 
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
@@ -138,7 +138,7 @@ bindsym $mod+Shift+r+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -168,22 +168,24 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# Bar-Gray: #252525
+# Neon-Green: #84BD00
 bar {
- 	font pango:DejaVu Sans Mono, Icons 9
+ 	font pango:Cantarell, Icons 10
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
   colors {
-    separator #84bd00
-    background #000000
+    separator #000000
+    background #252525
     statusline #839496
-    focused_workspace #84bd00 #2d2d2d #84bd00
+    focused_workspace #252525 #252525 #EEEEEE
     active_workspace #fdf6e3 #707070 #84bd00
-    inactive_workspace #2d2d2d #2d2d2d #8b8b8b
+    inactive_workspace #252525 #252525 #6f6f6f
     urgent_workspace #84bd00 #84bd00 #fdf6e3
   }
 }
-client.focused #000000 #000000 #84bd00 #2d2d2d
+client.focused #000000 #000000 #ffffff #2d2d2d
 client.focused_inactive #2b2b2b #2b2b2b #eee8d5 #6c71c4
-client.unfocused #4D4D4D #4D4D4D #93a1a1 #586e75
+client.unfocused #ffffff #4D4D4D #93a1a1 #586e75
 client.urgent #84bd00 #84bd00 #fdf6e3 #dc322f
 
 # Turn off the pc.
@@ -193,12 +195,12 @@ bindsym $mod+Control+1 exec poweroff
 bindsym $mod+Control+2 exec i3lock -i ~/Pictures/Blue-Screen.png -u -e
 
 # Launchers
-bindsym $mod+Shift+c workspace 1: Web; exec google-chrome-stable 
-bindsym $mod+Shift+s workspace 2:  Spotify; exec spotify 
-bindsym $mod+Shift+w workspace 3: Others; exec telegram-desktop
-bindsym $mod+Shift+g workspace 3: Others; exec steam
-bindsym $mod+Shift+a workspace 4:  Code; exec atom
-bindsym $mod+Control+j workspace 4:  Code; exec intellij-idea-ultimate-edition
+bindsym $mod+Shift+c workspace Web; exec env GTK_THEME=Adwaita:light firefox
+bindsym $mod+Shift+s workspace  Spotify; exec spotify 
+bindsym $mod+Shift+w workspace Others; exec telegram-desktop
+bindsym $mod+Shift+g workspace Others; exec steam
+bindsym $mod+Shift+a workspace ; exec atom
+bindsym $mod+Control+j workspace ; exec intellij-idea-ultimate-edition
 bindsym $mod+Shift+t exec qbittorrent
 bindsym $mod+Shift+f exec nautilus
 bindsym $mod+Shift+p exec evince
@@ -206,6 +208,8 @@ bindsym $mod+Shift+p exec evince
 # Media player controls
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play
 
 # Brightness controls
 bindsym XF86WWW exec xbacklight -inc 10 
