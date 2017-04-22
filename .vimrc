@@ -10,6 +10,7 @@ set softtabstop=4 " Set the width of the 'spaces tab'
 set tabstop=4 " Width of a hard tab(for visualization)
 set shiftwidth=4 " Set size of 'reindent' operation (<< and >>)
 set clipboard=unnamedplus   " Set system clipboard as vim clipboard
+set hlsearch " Turn on the highlight when search with '\something'
 
 " Remove the Ex mode, when press 'Q'
 nnoremap Q <nop>e
