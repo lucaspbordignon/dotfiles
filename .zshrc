@@ -8,6 +8,11 @@ compinit
 # End of lines added by compinstall
 
 ###############################################################################
+# History
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
 # Fish-like auto complete
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -15,6 +20,7 @@ PS1='%F{green}%~%f >> '
 
 alias faustop="top"
 alias cd=cdls
+alias ls='ls --color=auto'
 alias emacs="emacs -nw"
 # Function to execute a 'cd' and, after that, a 'ls'
 function cdls {
