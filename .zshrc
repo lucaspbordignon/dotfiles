@@ -15,6 +15,7 @@ PS1='%F{green}%~%f >> '
 
 alias faustop="top"
 alias cd=cdls
+alias ls='ls --color=auto'
 alias emacs="emacs -nw"
 # Function to execute a 'cd' and, after that, a 'ls'
 function cdls {
