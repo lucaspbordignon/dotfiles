@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ln -f .zshrc ~/
+ln -f .vimrc ~/
+ln -f config/i3/config ~/.config/i3/
+ln -f config/polybar/config ~/.config/polybar/
+ln -f config/polybar/redshift.sh ~/.config/polybar/
+ln -f config/polybar/spotify.sh ~/.config/polybar/
+ln -f config/termite/config ~/.config/termite/
