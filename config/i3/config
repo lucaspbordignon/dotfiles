@@ -16,7 +16,8 @@
 # nautilus
 # playerctl(AUR)
 # ttf-font-awesome(AUR)
-#
+# ttf-font-icons (AUR)
+# polybar (AUR)
 
 
 # Mod key = Windows.
@@ -46,12 +47,16 @@ bindsym $mod+Return exec termite
 
 ##### Auto Start
 #
-exec --no-startup-id feh --bg-fill ~/Pictures/Background/space.jpg
+exec --no-startup-id polybar bottom
+exec --no-startup-id polybar top
+exec --no-startup-id feh --bg-fill ~/Pictures/Background/geometry.png
 exec --no-startup-id volumeicon		# Applets
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -b		# Composite Manager
 exec --no-startup-id syndaemon -i 1 -t -d	# Disable touchpad while typing
 exec --no-startup-id dropbox
+exec --no-startup-id redshift
+exec --no-startup-id xset s off -dpms   # Prevent screen from blanking
 
 # Disable title bar
 new_window pixel 1
@@ -110,24 +115,24 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # switch to workspace
-bindsym $mod+1 workspace Web
-bindsym $mod+2 workspace  Spotify
-bindsym $mod+3 workspace Others
-bindsym $mod+4 workspace 
-bindsym $mod+5 workspace 
-bindsym $mod+6 workspace 
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace Web
-bindsym $mod+Shift+2 move container to workspace  Spotify
-bindsym $mod+Shift+3 move container to workspace Others
-bindsym $mod+Shift+4 move container to workspace 
-bindsym $mod+Shift+5 move container to workspace 
-bindsym $mod+Shift+6 move container to workspace 
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
@@ -166,27 +171,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# Bar-Gray: #252525
-# Neon-Green: #84BD00
-bar {
- 	font pango:Cantarell, Icons 10
-	status_command i3blocks -c ~/.config/i3/i3blocks.conf
-  colors {
-    separator #000000
-    background #252525
-    statusline #839496
-    focused_workspace #252525 #252525 #EEEEEE
-    active_workspace #fdf6e3 #707070 #84bd00
-    inactive_workspace #252525 #252525 #6f6f6f
-    urgent_workspace #84bd00 #84bd00 #fdf6e3
-  }
-}
+# Borders and other stuff
 client.focused #000000 #000000 #ffffff #2d2d2d
 client.focused_inactive #2b2b2b #2b2b2b #eee8d5 #6c71c4
 client.unfocused #ffffff #4D4D4D #93a1a1 #586e75
 client.urgent #84bd00 #84bd00 #fdf6e3 #dc322f
+
+# i3-gaps settings
+gaps inner 2
+gaps outer 30
 
 # Turn off the pc.
 bindsym $mod+Control+1 exec poweroff
@@ -195,15 +188,15 @@ bindsym $mod+Control+1 exec poweroff
 bindsym $mod+Control+2 exec i3lock -i ~/Pictures/Blue-Screen.png -u -e
 
 # Launchers
-bindsym $mod+Shift+c workspace Web; exec env GTK_THEME=Adwaita:light firefox
-bindsym $mod+Shift+s workspace  Spotify; exec spotify 
-bindsym $mod+Shift+w workspace Others; exec telegram-desktop
-bindsym $mod+Shift+g workspace Others; exec steam
-bindsym $mod+Shift+a workspace ; exec atom
-bindsym $mod+Control+j workspace ; exec intellij-idea-ultimate-edition
+bindsym $mod+Shift+c workspace 1; exec env GTK_THEME=Adwaita:light firefox
+bindsym $mod+Shift+s workspace 2; exec spotify 
+bindsym $mod+Shift+w workspace 3; exec telegram-desktop
+bindsym $mod+Shift+g workspace 5; exec steam
+bindsym $mod+Control+j workspace 4; exec intellij-idea-ultimate-edition
 bindsym $mod+Shift+t exec qbittorrent
 bindsym $mod+Shift+f exec nautilus
 bindsym $mod+Shift+p exec evince
+bindsym $mod+Shift+v exec rofi -show run
 
 # Media player controls
 bindsym XF86AudioNext exec playerctl next
