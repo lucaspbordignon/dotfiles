@@ -7,3 +7,4 @@ ln -f config/polybar/config ~/.config/polybar/
 ln -f config/polybar/redshift.sh ~/.config/polybar/
 ln -f config/polybar/spotify.sh ~/.config/polybar/
 ln -f config/termite/config ~/.config/termite/
+cp media/geometry.png ~/Pictures/Background/
