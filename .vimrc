@@ -24,9 +24,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plugin 'Syntastic' " Syntax checker
 Plugin 'bling/vim-airline' " Status bar
+Plugin 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ervandew/supertab'
 Plugin 'editorconfig/editorconfig-vim'

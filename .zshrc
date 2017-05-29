@@ -9,7 +9,7 @@ compinit
 
 ###############################################################################
 # History
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_hist
 HISTSIZE=1000
 SAVEHIST=1000
 
@@ -22,11 +22,17 @@ alias faustop="top"
 alias cd=cdls
 alias ls='ls --color=auto'
 alias emacs="emacs -nw"
+alias nvidia-docker=gpudocker
+
 # Function to execute a 'cd' and, after that, a 'ls'
 function cdls {
     builtin cd "$@" && ls
 }
 
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey \^U backward-kill-line
+function gpudocker {
+    sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log && nvidia-docker
+}
+
+bindkey "^[[1;5C" forward-word # Ctrl ->
+bindkey "^[[1;5D" backward-word # Ctrl <-
+bindkey \^U backward-kill-line # Ctrl + u
