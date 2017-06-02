@@ -13,6 +13,9 @@ HISTFILE=~/.zsh_hist
 HISTSIZE=1000
 SAVEHIST=1000
 
+# Allows jobs to run even if the shell is killed
+setopt NO_HUP
+
 # Fish-like auto complete
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
