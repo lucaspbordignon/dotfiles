@@ -28,7 +28,6 @@ Plugin 'Syntastic' " Syntax checker
 Plugin 'bling/vim-airline' " Status bar
 Plugin 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ervandew/supertab'
 Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
@@ -41,9 +40,6 @@ let g:syntastic_python_checkers=['flake8']    " pip install flake8
 let g:syntastic_python_flake8_args='--ignore=E501,E225,E114,F403,F405'     " Disable 'line too long' and 'indentation not multiple 4'
 let g:syntastic_check_on_open=1 " Check the file when open(Not only on save)
 let g:syntastic_python_python_exec='/usr/bin/python3.5'
-
-" Supertab
-let g:SuperTabCrMapping=1   " Doesn't create a new line when insert a word.
 
 " air-line
 let g:airline_powerline_fonts = 1
