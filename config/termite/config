@@ -14,26 +14,6 @@ clickable_url = true
 font = DejaVu Sans Mono for Powerline 11
 scrollback_lines = 10000
 search_wrap = true
-#icon_name = terminal
-#geometry = 640x480
-
-# "system", "on" or "off"
-cursor_blink = system
-
-# "block", "underline" or "ibeam"
-cursor_shape = block
-
-# $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
-
-# set size hints for the window
-#size_hints = false
-
-# Hide links that are no longer valid in url select overlay mode
-filter_unmatched_urls = true
-
-# emit escape sequences for extra modified keys
-#modify_other_keys = false
 
 [colors]
 cursor = #dcdccc
@@ -41,10 +21,6 @@ cursor_foreground = #000000
 foreground = #f9f9f9
 foreground_bold = #ffffff
 background = rgba(54, 54, 54, 1)
-
-# if unset, will reverse foreground and background
-highlight = #2f2f2f
-
 
 # black
 color0  = #2b2b2b
@@ -77,3 +53,16 @@ color14 = #519f50
 # white
 color7  = #e6e1dc
 color15 = #f9f7f3
+
+###############################################################################
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# if unset, will reverse foreground and background
+highlight = #2f2f2f
