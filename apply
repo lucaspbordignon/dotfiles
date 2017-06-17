@@ -9,3 +9,5 @@ ln -f config/polybar/spotify.sh ~/.config/polybar/
 ln -f config/termite/config ~/.config/termite/
 cp media/geometry.png ~/Pictures/Background/
 cp media/nasa.tif ~/Pictures/Background/
+cp tropikos ~/.vim/colors/
+git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
