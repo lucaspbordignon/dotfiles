@@ -24,7 +24,7 @@ PS1='%F{green}%~%f >> '
 alias faustop="top"
 alias cd=cdls
 alias ls='ls --color=auto'
-alias emacs="emacs -nw"
+alias vim="vimx"    # Needed for Fedora.
 alias nvidia-docker=gpudocker
 
 # Function to execute a 'cd' and, after that, a 'ls'
