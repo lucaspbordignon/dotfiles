@@ -15,6 +15,9 @@ set hlsearch " Turn on the highlight when search with '\something'
 " Remove the Ex mode, when press 'Q'
 nnoremap Q <nop>e
 
+" Scrollof (to keep cursor in the middle of the screen)
+set so=20
+
 " Theme
 colorscheme tropikos
 syntax on
@@ -27,6 +30,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Syntastic' " Syntax checker
 Plugin 'bling/vim-airline' " Status bar
 Plugin 'jiangmiao/auto-pairs' " Brackets autocomplete
+Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'editorconfig/editorconfig-vim'
 
