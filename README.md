@@ -1,2 +1,2 @@
 # dotfiles
-Some settings from my linux system's.
+Some settings from my linux systems.
