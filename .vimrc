@@ -10,7 +10,7 @@ set softtabstop=4 " Set the width of the 'spaces tab'
 set tabstop=4 " Width of a hard tab(for visualization)
 set shiftwidth=4 " Set size of 'reindent' operation (<< and >>)
 set clipboard=unnamedplus   " Set system clipboard as vim clipboard
-set hlsearch " Turn on the highlight when search with '\something'
+" set hlsearch " Turn on the highlight when search with '\something'
 
 " Remove the Ex mode, when press 'Q'
 nnoremap Q <nop>e
@@ -19,7 +19,7 @@ nnoremap Q <nop>e
 set so=20
 
 " Theme
-colorscheme tropikos
+colorscheme codedark
 syntax on
 
 " Plugins
@@ -33,6 +33,7 @@ Plugin 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tomasiser/vim-code-dark'
 
 call vundle#end()
 filetype plugin indent on
@@ -47,7 +48,7 @@ let g:syntastic_python_python_exec='/usr/bin/python3.5'
 
 " air-line
 let g:airline_powerline_fonts = 1
-let g:airline_theme='badwolf'
+let g:airline_theme='codedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#syntastic#enabled=1 " Syntastic integration
@@ -55,6 +56,9 @@ let g:airline#extensions#syntastic#enabled=1 " Syntastic integration
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+" clang_complete
+"let g:clang_close_preview = 1
 
 " unicode symbols
 let g:airline_left_sep = '»'

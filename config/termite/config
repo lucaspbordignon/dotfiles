@@ -20,7 +20,7 @@ cursor = #dcdccc
 cursor_foreground = #000000
 foreground = #f9f9f9
 foreground_bold = #ffffff
-background = rgba(54, 54, 54, 1)
+background = #1e1e1e
 
 # black
 color0  = #2b2b2b
