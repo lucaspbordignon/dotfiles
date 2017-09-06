@@ -24,7 +24,6 @@ PS1='%F{green}%~%f >> '
 alias faustop="top"
 alias cd=cdls
 alias ls='ls --color=auto'
-alias vim="vimx"    # Needed for Fedora.
 alias nvidia-docker=gpudocker
 
 # Function to execute a 'cd' and, after that, a 'ls'
@@ -39,3 +38,7 @@ function gpudocker {
 bindkey "^[[1;5C" forward-word # Ctrl ->
 bindkey "^[[1;5D" backward-word # Ctrl <-
 bindkey \^U backward-kill-line # Ctrl + u
+bindkey "\e[3~" delete-char # Del
+
+export PATH=/opt/cuda/bin:${PATH}
+export LD_LIBRARY_PATH=/opt/cuda/include:${PATH}
