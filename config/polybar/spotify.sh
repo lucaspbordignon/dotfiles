@@ -4,7 +4,7 @@
 # This allows us to change its appearance conditionally
 
 player_status=$(playerctl status 2> /dev/null)
-metadata=$(playerctl metadata)
+metadata=$(playerctl -l 2> /dev/null)
 
 if [[ $metadata == *spotify* ]]; then
     icon=""
