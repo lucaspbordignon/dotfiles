@@ -1,12 +1,20 @@
 #!/bin/sh
 
+configure_vim()
+{
+    ln -f .vimrc ~/
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +BundleInstall +qall
+    cp -r ~/.vim/bundle/vim-code-dark/colors ~/.vim/colors
+}
+
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/polybar
 mkdir -p ~/.config/termite
 mkdir -p ~/Pictures
 
 ln -f .zshrc ~/
-ln -f .vimrc ~/
+configure_vim
 ln -f config/i3/config ~/.config/i3/
 ln -f config/polybar/config ~/.config/polybar/
 ln -f config/polybar/redshift.sh ~/.config/polybar/
