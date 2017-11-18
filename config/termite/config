@@ -1,5 +1,7 @@
 #
 # ~/.config/termite/
+# Requirements:
+#               - Nerd fonts
 #
 
 [options]
@@ -11,7 +13,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = DejaVu Sans Mono 11
+font = Ubuntu Mono Nerd Font 13
 scrollback_lines = 10000
 search_wrap = true
 

@@ -10,7 +10,6 @@ set number " Line numbers
 set relativenumber
 set mouse=a " Mouse support
 set laststatus=2 " Enable airline
-set tabstop=4 " Width of a hard tab(for visualization)
 set clipboard=unnamed   " Set system clipboard as vim clipboard
 set backspace=indent,eol,start
 set linebreak               " Break long lines by word, not char"
@@ -26,8 +25,8 @@ set smartindent
 set smarttab
 set shiftwidth=2
 set softtabstop=2
-set tabstop=2
 set expandtab
+set tabstop=2 " Width of a hard tab(for visualization)
 
 " ================ Search ===========================
 set incsearch       " Find the next match as we type the search
