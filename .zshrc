@@ -42,3 +42,5 @@ bindkey "\e[3~" delete-char # Del
 
 export PATH=/opt/cuda/bin:${PATH}
 export LD_LIBRARY_PATH=/opt/cuda/include:${PATH}
+
+[ -s "/home/lucasbordignon/.scm_breeze/scm_breeze.sh" ] && source "/home/lucasbordignon/.scm_breeze/scm_breeze.sh"

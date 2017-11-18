@@ -1,10 +1,13 @@
 "
 " Using the 'gvim' package to enable the clipboard feature.
 "
+" Requires:
+"           - The_silver_searcher package
+"           - vim Fuzzy Finder
 
 set encoding=utf-8
 set number " Line numbers
-"set relativenumber
+set relativenumber
 set mouse=a " Mouse support
 set laststatus=2 " Enable airline
 set tabstop=4 " Width of a hard tab(for visualization)
@@ -46,17 +49,10 @@ nmap K  <silent>
 " Scrollof (to keep cursor in the middle of the screen)
 set so=20
 
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all
-" the plugins.
+" Change leader to a comma. That means all \x commands turn into ,x
 let mapleader=","
 
-" Theme
-colorscheme codedark
-syntax on
-
-" If installed using git
+" If Fuzzy Finder is installed using git
 set rtp+=~/.fzf
 
 " ================ Plugins ==============
@@ -69,7 +65,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'rking/ag.vim'
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 
 " Ruby Bundles
@@ -79,6 +75,10 @@ Plug 'tpope/vim-endwise', { 'for': ['ruby', 'rb'] } " Auto add end on class, mod
 call plug#end()
 
 filetype plugin indent on
+
+" Theme
+colorscheme codedark
+syntax on
 
 " Open Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
