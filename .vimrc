@@ -45,6 +45,9 @@ nmap K  <silent>
 :command W w
 :command Q q
 
+" Vertical split
+noremap <C-v> :vsp<CR>
+
 " Scrollof (to keep cursor in the middle of the screen)
 set so=20
 
