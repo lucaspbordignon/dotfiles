@@ -45,8 +45,15 @@ nmap K  <silent>
 :command W w
 :command Q q
 
+" Reduce Ctrl+D and Ctrl+U step
+noremap <C-U> 12<C-U>
+noremap <C-D> 12<C-D>
+
+" Vertical split
+noremap <C-v> :vsp<CR>
+
 " Scrollof (to keep cursor in the middle of the screen)
-set so=20
+set so=22
 
 " Change leader to a comma. That means all \x commands turn into ,x
 let mapleader=","
