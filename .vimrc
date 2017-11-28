@@ -12,7 +12,7 @@ set mouse=a " Mouse support
 set laststatus=2 " Enable airline
 set clipboard=unnamed   " Set system clipboard as vim clipboard
 set backspace=indent,eol,start
-set linebreak               " Break long lines by word, not char"
+set linebreak   " Break long lines by word
 
 " ================ Turn Off Swap Files ==============
 set noswapfile
@@ -94,21 +94,9 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
-
 " airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.readonly = ''
 
 " FZF configuration
