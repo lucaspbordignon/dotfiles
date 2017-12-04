@@ -49,9 +49,6 @@ nmap K  <silent>
 noremap <C-U> 12<C-U>
 noremap <C-D> 12<C-D>
 
-" Vertical split
-noremap <C-v> :vsp<CR>
-
 " Scrollof (to keep cursor in the middle of the screen)
 set so=22
 
