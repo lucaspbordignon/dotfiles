@@ -6,20 +6,20 @@
 "           - vim Fuzzy Finder
 
 set encoding=utf-8
-set number " Line numbers
-set relativenumber
-set mouse=a " Mouse support
-set laststatus=2 " Enable airline
-set clipboard=unnamed   " Set system clipboard as vim clipboard
+set number                      " Line numbers
+set relativenumber              " Lines relative to the actual line
+set mouse=a                     " Mouse support
+set laststatus=2                " Enable airline
+set clipboard=unnamed           " Set system clipboard as vim clipboard
 set backspace=indent,eol,start
-set linebreak   " Break long lines by word
+set linebreak                   " Break long lines by word
 
-" ================ Turn Off Swap Files ==============
+" ###############  Turn Off Swap Files ###############
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Indentation ======================
+" ############## Indentation ###############
 set autoindent
 set smartindent
 set smarttab
@@ -28,29 +28,32 @@ set softtabstop=2
 set expandtab
 set tabstop=2 " Width of a hard tab(for visualization)
 
-" ================ Search ===========================
+" ############### Search ###############
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
+" ############### Map commands ###############
 " Remove the Ex mode, when press 'Q'
 nnoremap Q <nop>e
 nmap q: <silent>
 nmap K  <silent>
 
-" =============== Map commands =====================
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
 
+" Scrollof (to keep cursor in the middle of the screen)
+set so=22
+
 " Reduce Ctrl+D and Ctrl+U step
 noremap <C-U> 12<C-U>
 noremap <C-D> 12<C-D>
 
-" Scrollof (to keep cursor in the middle of the screen)
-set so=22
+" Remove trailing whitespace
+map wr :%s/\s\+$//e<enter> :w<enter>
 
 " Change leader to a comma. That means all \x commands turn into ,x
 let mapleader=","
@@ -63,10 +66,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'bling/vim-airline' " Status bar
-Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'vim-airline/vim-airline-themes'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'tomasiser/vim-code-dark'
+Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
+Plug 'alvan/vim-closetag' " HTML tags completion
+Plug 'editorconfig/editorconfig-vim'
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
@@ -79,36 +83,29 @@ call plug#end()
 
 filetype plugin indent on
 
-" Theme
+" ############### Theme ###############
 colorscheme codedark
 syntax on
+let g:airline_theme='codedark'
 
 " Open Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
-nmap <leader>n :NERDTreeFind<CR>
 
 " air-line
 let g:airline_powerline_fonts = 1
-let g:airline_theme='codedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled=1
-let g:airline#extensions#syntastic#enabled=1 " Syntastic integration
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" airline symbols
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.readonly = ''
-
-" FZF configuration
-nmap <C-i> :Ag! "\b<cword>\b" <CR>
+" FZF and AG configuration
+nnoremap <C-a> :Ag<SPACE>
 nmap <C-p> :Files<CR>
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:fzf_layout = { 'down': '~30%' }
 
+" ############### Ruby settings ###############
 " Rspec
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>a :call RunAllSpecs()<CR>

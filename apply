@@ -30,6 +30,6 @@ ln -f config/polybar/config ~/.config/polybar/
 ln -f config/polybar/redshift.sh ~/.config/polybar/
 ln -f config/polybar/spotify.sh ~/.config/polybar/
 ln -f config/termite/config ~/.config/termite/
-cp media/geometry.png ~/Pictures/
-cp media/nasa.tif ~/Pictures/
+cp media/wallpaper.jpg ~/Pictures/
+cp media/lock.png ~/Pictures/
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
