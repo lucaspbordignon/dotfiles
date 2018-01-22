@@ -99,9 +99,9 @@ if !exists('g:airline_symbols')
 endif
 
 " FZF and AG configuration
-nnoremap <C-u> :Ag<SPACE>
+nnoremap <C-i> :Ag<SPACE>
 nmap <C-p> :Files<CR>
-let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_layout = { 'down': '~50%' }
 
 " Ale linter
 highlight clear ALEErrorSign
