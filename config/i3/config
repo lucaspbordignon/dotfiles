@@ -10,7 +10,7 @@
 # volumeicon    Volume applet
 # networkmanager
 # network-manager-applet
-# compton       
+# compton
 # feh
 # xorg-xbacklight
 # nautilus
@@ -49,13 +49,12 @@ bindsym $mod+Return exec termite
 #
 exec --no-startup-id polybar bottom
 exec --no-startup-id polybar top
-exec --no-startup-id feh --bg-fill ~/Pictures/Background/geometry.png
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec --no-startup-id volumeicon		# Applets
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -b		# Composite Manager
 exec --no-startup-id syndaemon -i 1 -t -d	# Disable touchpad while typing
 exec --no-startup-id dropbox
-exec --no-startup-id redshift
 exec --no-startup-id xset s off -dpms   # Prevent screen from blanking
 
 # Disable title bar
@@ -179,24 +178,24 @@ client.urgent #84bd00 #84bd00 #fdf6e3 #dc322f
 
 # i3-gaps settings
 gaps inner 2
-gaps outer 30
+gaps outer 8
 
 # Turn off the pc.
 bindsym $mod+Control+1 exec poweroff
 
 # Lock the screen.
-bindsym $mod+Control+2 exec i3lock -i ~/Pictures/Blue-Screen.png -u -e
+bindsym $mod+Control+2 exec i3lock -i ~/Pictures/lock.png -u -e
 
 # Launchers
-bindsym $mod+Shift+c workspace 1; exec env GTK_THEME=Adwaita:light firefox
-bindsym $mod+Shift+s workspace 2; exec spotify 
+bindsym $mod+Shift+c workspace 1; exec google-chrome-stable
+bindsym $mod+Shift+s workspace 2; exec spotify
 bindsym $mod+Shift+w workspace 3; exec telegram-desktop
 bindsym $mod+Shift+g workspace 5; exec steam
 bindsym $mod+Control+j workspace 4; exec intellij-idea-ultimate-edition
 bindsym $mod+Shift+t exec qbittorrent
 bindsym $mod+Shift+f exec nautilus
 bindsym $mod+Shift+p exec evince
-bindsym $mod+Shift+v exec rofi -show run
+bindsym $mod+Shift+Return exec rofi -show run
 
 # Media player controls
 bindsym XF86AudioNext exec playerctl next
@@ -204,5 +203,5 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
 
 # Brightness controls
-bindsym XF86WWW exec xbacklight -inc 10 
+bindsym XF86WWW exec xbacklight -inc 10
 bindsym XF86Mail exec xbacklight -dec 10
