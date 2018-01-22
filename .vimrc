@@ -4,6 +4,7 @@
 " Requires:
 "           - The_silver_searcher package
 "           - vim Fuzzy Finder
+"           - Flake8
 
 set encoding=utf-8
 set number                      " Line numbers
@@ -61,7 +62,7 @@ let mapleader=","
 " If Fuzzy Finder is installed using git
 set rtp+=~/.fzf
 
-" ================ Plugins ==============
+" ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -73,11 +74,8 @@ Plug 'alvan/vim-closetag' " HTML tags completion
 Plug 'editorconfig/editorconfig-vim'
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf.vim'
+Plug 'davidhalter/jedi-vim'
 Plug 'w0rp/ale'
-
-" Ruby Bundles
-Plug 'thoughtbot/vim-rspec', { 'for': ['ruby', 'rb'] } " Run RSpecs from vim
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'rb'] } " Auto add end on class, module, def, etc.
 
 call plug#end()
 
@@ -101,9 +99,18 @@ if !exists('g:airline_symbols')
 endif
 
 " FZF and AG configuration
-nnoremap <C-a> :Ag<SPACE>
+nnoremap <C-u> :Ag<SPACE>
 nmap <C-p> :Files<CR>
 let g:fzf_layout = { 'down': '~30%' }
+
+" Ale linter
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+let g:ale_sign_error = '>> '
+let g:ale_sign_warning = '-'
+
+" Jedi autocompletion
+autocmd FileType python setlocal completeopt-=preview
 
 " ############### Ruby settings ###############
 " Rspec
