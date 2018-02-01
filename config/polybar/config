@@ -1,12 +1,10 @@
 [bar/top]
-monitor = eDP-1
 width = 100%
-height = 24
+height = 22
 
-background = #00000000
+background = #1e1e1eff
 foreground = #ccffffff
 
-line-color = ${bar/bottom.background}
 line-size = 16
 
 spacing = 2
@@ -14,51 +12,23 @@ padding-right = 5
 module-margin = 4
 border-size = 0
 
-font-0 = NotoSans-Regular:size=10;-1
-font-1 = MaterialIcons:size=10;0
+font-0 = Ubuntu Nerd Font:size=11:antialias=true;-1
+font-1 = MaterialIcons:size=11:antialias=true;0
 font-2 = Cantarell:size=12:antialias=true;-2
 font-3 = FontAwesome:size=10;0
 
-modules-left = date
-modules-center = clock
+modules-left = clock date
+modules-center = i3
 modules-right = spotify redshift battery cpu memory
 
-[bar/bottom]
-monitor = eDP-1
-width = 100%
-height = 25
-offset-x = 0
-offset-y = 5
-
-bottom = true
-
-background = #00000000
-foreground = #888888
-
-spacing = 1
-padding-left = 4
-padding-right = 4
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = hack:pixelsize=12;1
-font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = siji:pixelsize=10;0
-font-3 = FontAwesome:pixelsize=18;0
-
-modules-left =
-modules-center = i3
-modules-right =
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 tray-position = right
 tray-padding = 0
 tray-transparent = true
-
-override-redirect = true
 wm-restack = i3
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
 
 ;;;           ;;;
 ;    Modules    ;
@@ -188,7 +158,5 @@ interval = 1
 
 [module/date]
 type = internal/date
-date = %%{F#fff}%A, %d %B %Y  
+date = %%{F#fff}%A, %d %B %Y
 interval = 60
-
-; vim:ft=dosini
