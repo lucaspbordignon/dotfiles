@@ -14,6 +14,7 @@ set laststatus=2                " Enable airline
 set clipboard=unnamed           " Set system clipboard as vim clipboard
 set backspace=indent,eol,start
 set linebreak                   " Break long lines by word
+set cursorline                  " Shows the actual cursor line
 
 " ###############  Turn Off Swap Files ###############
 set noswapfile
@@ -41,10 +42,14 @@ nnoremap Q <nop>e
 nmap q: <silent>
 nmap K  <silent>
 
+" Removes the recording qhen press 'q<letter>'
+nmap q <Nop>
+
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
+:command Tabe tabe
 
 " Scrollof (to keep cursor in the middle of the screen)
 set so=22
@@ -76,6 +81,11 @@ Plug 'rking/ag.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'w0rp/ale'
+Plug 'matze/vim-move'
+Plug 'ervandew/supertab'
+Plug 'elzr/vim-json'
+Plug 'mxw/vim-jsx'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -99,21 +109,27 @@ if !exists('g:airline_symbols')
 endif
 
 " FZF and AG configuration
-nnoremap <C-i> :Ag<SPACE>
+" Search the selected word
+nmap <C-i> :Ag! "\b<cword>\b" <CR>
+" Search a given word
+nmap <C-b> :Ag! <SPACE>
+" Search by filename
 nmap <C-p> :Files<CR>
 let g:fzf_layout = { 'down': '~50%' }
 
-" Ale linter
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
-let g:ale_sign_error = '>> '
-let g:ale_sign_warning = '-'
+" Ale
+let g:ale_lint_on_text_changed = 'never'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'ruby': ['rubocop'],
+\}
 
 " Jedi autocompletion
 autocmd FileType python setlocal completeopt-=preview
 
-" ############### Ruby settings ###############
-" Rspec
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
+" Vim-move
+let g:move_key_modifier = 'C'
+
+" Vim-jsx
+let g:jsx_ext_required = 0
