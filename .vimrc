@@ -98,6 +98,7 @@ let g:airline_theme='codedark'
 
 " Open Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
 
 " air-line
 let g:airline_powerline_fonts = 1
