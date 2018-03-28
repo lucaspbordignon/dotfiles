@@ -45,6 +45,10 @@ nmap K  <silent>
 " Removes the recording qhen press 'q<letter>'
 nmap q <Nop>
 
+" Mapping yank to the system clipboard
+vnoremap y "+y
+
+" Because everybody makes this mistakes
 :command WQ wq
 :command Wq wq
 :command W w
@@ -124,10 +128,8 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
+\   'python': ['flake8'],
 \}
-
-" indentLine
-let g:indentLine_fileTypeExclude = ['tex']
 
 " Jedi autocompletion
 autocmd FileType python setlocal completeopt-=preview
