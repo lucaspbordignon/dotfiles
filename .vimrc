@@ -113,7 +113,7 @@ endif
 " Search the selected word
 nmap <C-i> :Ag! "\b<cword>\b" <CR>
 " Search a given word
-nmap <C-b> :Ag! <SPACE>
+nmap <C-b> :Ag!<SPACE>
 " Search by filename
 nmap <C-p> :Files<CR>
 let g:fzf_layout = { 'down': '~50%' }
@@ -125,6 +125,9 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
 \}
+
+" indentLine
+let g:indentLine_fileTypeExclude = ['tex']
 
 " Jedi autocompletion
 autocmd FileType python setlocal completeopt-=preview
