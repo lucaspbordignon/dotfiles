@@ -47,11 +47,11 @@ nmap q <Nop>
 vnoremap y "+y
 
 " Because everybody makes this mistakes
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
-:command Tabe tabe
+:command! WQ wq
+:command! Wq wq
+:command! W w
+:command! Q q
+:command! Tabe tabe
 
 " Scrollof (to keep cursor in the middle of the screen)
 set so=22
@@ -66,8 +66,9 @@ map wr :%s/\s\+$//e<enter> :w<enter>
 " Change leader to a comma. That means all \x commands turn into ,x
 let mapleader=","
 
-" Opens the .vimrc
+" Open and reload the .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>rv :so $MYVIMRC<CR>
 
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
