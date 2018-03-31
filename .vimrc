@@ -22,8 +22,6 @@ set nobackup
 set nowb
 
 " ############## Indentation ###############
-set autoindent
-set smartindent
 set smarttab
 set shiftwidth=2
 set softtabstop=2
@@ -68,8 +66,8 @@ map wr :%s/\s\+$//e<enter> :w<enter>
 " Change leader to a comma. That means all \x commands turn into ,x
 let mapleader=","
 
-" If Fuzzy Finder is installed using git
-set rtp+=~/.fzf
+" Opens the .vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
 
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
@@ -84,16 +82,15 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'rking/ag.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
-Plug 'w0rp/ale'
-Plug 'matze/vim-move'
 Plug 'ervandew/supertab'
+Plug 'w0rp/ale'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-commentary'
+Plug 'matze/vim-move'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
-Plug 'Yggdroot/indentLine'
 
 call plug#end()
-
-filetype plugin indent on
 
 " ############### Theme ###############
 colorscheme codedark
@@ -109,18 +106,17 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled=1
 
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
 " FZF and AG configuration
+"
+" If Fuzzy Finder is installed using git
+set rtp+=~/.fzf
+let g:fzf_layout = { 'down': '~50%' }
 " Search the selected word
 nmap <C-i> :Ag! "\b<cword>\b" <CR>
 " Search a given word
 nmap <C-b> :Ag!<SPACE>
 " Search by filename
 nmap <C-p> :Files<CR>
-let g:fzf_layout = { 'down': '~50%' }
 
 " Ale
 let g:ale_lint_on_text_changed = 'never'
