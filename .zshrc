@@ -21,9 +21,8 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 PS1='%F{green}%~%f >> '
 
-alias faustop="top"
+alias faustop="htop"
 alias cd=cdls
-alias ls='ls --color=auto'
 alias nvidia-docker=gpudocker
 
 # Function to execute a 'cd' and, after that, a 'ls'
@@ -35,12 +34,18 @@ function gpudocker {
     sudo -b nohup nvidia-docker-plugin > /tmp/nvidia-docker.log && nvidia-docker
 }
 
-bindkey "^[[1;5C" forward-word # Ctrl ->
-bindkey "^[[1;5D" backward-word # Ctrl <-
-bindkey \^U backward-kill-line # Ctrl + u
-bindkey "\e[3~" delete-char # Del
+bindkey "[C" end-of-line # Option + ->
+bindkey "[D" beginning-of-line # Option + <-
+bindkey "^[a" backward-word # Cmd + <-
+bindkey "^[e" forward-word # Cmd + ->
 
-export PATH=/opt/cuda/bin:${PATH}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -s "/Users/lucasbordignon/.scm_breeze/scm_breeze.sh" ] && source "/Users/lucasbordignon/.scm_breeze/scm_breeze.sh"
+
+# Work settings
+export PATH=/opt/cuda/bin:${HOME}/.rbenv/bin:${PATH}
 export LD_LIBRARY_PATH=/opt/cuda/include:${PATH}
-
-[ -s "/home/lucasbordignon/.scm_breeze/scm_breeze.sh" ] && source "/home/lucasbordignon/.scm_breeze/scm_breeze.sh"
+eval "$(rbenv init -)"
+eval "$(pyenv init -)"
