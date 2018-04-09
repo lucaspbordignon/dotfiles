@@ -48,9 +48,6 @@ nmap K  <silent>
 " Removes the recording qhen press 'q<letter>'
 nmap q <Nop>
 
-" Mapping yank to the system clipboard
-vnoremap y "+y
-
 " Because everybody makes this mistakes
 :command! WQ wq
 :command! Wq wq
@@ -95,6 +92,7 @@ Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
+Plug 'christoomey/vim-system-copy'
 
 call plug#end()
 
