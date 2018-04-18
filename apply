@@ -32,4 +32,5 @@ ln -f config/polybar/spotify.sh ~/.config/polybar/
 ln -f config/termite/config ~/.config/termite/
 cp media/wallpaper.jpg ~/Pictures/
 cp media/lock.png ~/Pictures/
+mkdir ~/.zsh/zsh-autosuggestions
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
