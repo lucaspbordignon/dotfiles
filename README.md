@@ -6,7 +6,7 @@ These are my default configuration files for my macOS systems.
 - vim (the only choice)
 - zshell
 ## Installing
-As easy as make a good coffee with great beans. Simply run ```./apply``` and the script will clone, install and move the dependencies for the configs.
+As easy as making a good coffee with great beans. Simply run ```./apply``` and the script will clone, install and move the dependencies for the configs.
 
 Note: you must have vim and zshell installed to note the differences.
 
