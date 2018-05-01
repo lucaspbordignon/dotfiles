@@ -30,9 +30,10 @@ set tabstop=2 " Width of a hard tab(for visualization)
 
 " ############### Search ###############
 set incsearch       " Find the next match as we type the search
-set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+set hlsearch        " Highlight searches by default
+
 set wildignore+=*.pyc
 set wildignore+=*.gem
 set wildignore+=log/**
@@ -100,6 +101,12 @@ colorscheme codedark
 syntax on
 let g:airline_theme='codedark'
 
+" Search highlight
+hi Search cterm=NONE
+hi Search ctermfg=LightGrey
+hi Search ctermbg=DarkYellow
+
+" ############### Plugins Settings ###############
 " Open Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
