@@ -1,38 +1,19 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# ZSH Theme
+autoload -U promptinit; promptinit
+prompt pure
 
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/lucasbordignon/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  rails
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
+# History
+HISTFILE=~/.zsh_hist
+HISTSIZE=1000
+SAVEHIST=1000
 
 # Allows jobs to run even if the shell is killed
 setopt NO_HUP
 
 alias faustop="htop"
 alias cd=cdls
+alias ls='ls -G'
+alias :q=exit
 
 # Function to execute a 'cd' and, after that, a 'ls'
 function cdls {
@@ -60,21 +41,10 @@ bindkey '^P' fzf-file-widget
 [ -s "/Users/lucasbordignon/.scm_breeze/scm_breeze.sh" ] && source "/Users/lucasbordignon/.scm_breeze/scm_breeze.sh"
 
 # Work settings
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=/opt/cuda/bin:${HOME}/.rbenv/bin:${PATH}
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
-
-prompt_end() {
-  if [[ -n $CURRENT_BG ]]; then
-      print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-  else
-      print -n "%{%k%}"
-  fi
-
-  print -n "%{%f%}"
-  CURRENT_BG=''
-
-  #Adds the new line and ➜ as the start character.
-  printf "\n ➜";
-}
-
