@@ -3,7 +3,8 @@
 install_oh_my_zsh()
 {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+  ln -f .zshrc ~/
+  ln -f tmux/.tmux.conf ~/
 }
 
 configure_vim()
@@ -24,7 +25,6 @@ configure_scmbreeze()
 }
 
 install_oh_my_zsh
-ln -f .zshrc ~/
 touch ~/.hushlogin
 configure_vim
 configure_scmbreeze
