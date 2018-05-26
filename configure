@@ -1,10 +1,12 @@
 #!/bin/sh
 
-install_oh_my_zsh()
+configure_zsh()
 {
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  ln -f .zshrc ~/
+  ln -f zsh/.zshrc ~/
+  ln -f "$PWD/zsh/pure.zsh" /usr/local/share/zsh/site-functions/prompt_pure_setup
+  ln -f "$PWD/zsh/async.zsh" /usr/local/share/zsh/site-functions/async
   ln -f tmux/.tmux.conf ~/
+  touch ~/.hushlogin
 }
 
 configure_vim()
@@ -24,7 +26,6 @@ configure_scmbreeze()
   source ~/.zshrc
 }
 
-install_oh_my_zsh
-touch ~/.hushlogin
+configure_zsh
 configure_vim
 configure_scmbreeze
