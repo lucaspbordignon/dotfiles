@@ -94,6 +94,7 @@ Plug 'matze/vim-move'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-system-copy'
+Plug 'victorfeijo/binding-pry-vim'
 
 call plug#end()
 
