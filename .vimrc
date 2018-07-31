@@ -40,6 +40,8 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
+filetype plugin on
+
 " ############### Map commands ###############
 " Remove the Ex mode, when press 'Q'
 nnoremap Q <nop>e
@@ -94,7 +96,7 @@ Plug 'matze/vim-move'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-system-copy'
-Plug 'victorfeijo/binding-pry-vim'
+Plug 'suan/vim-instant-markdown'
 
 call plug#end()
 
