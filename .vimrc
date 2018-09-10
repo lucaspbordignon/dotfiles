@@ -11,7 +11,6 @@ set number                      " Line numbers
 set relativenumber              " Lines relative to the actual line
 set mouse=a                     " Mouse support
 set laststatus=2                " Enable airline
-set clipboard=unnamed           " Set system clipboard as vim clipboard
 set backspace=indent,eol,start
 set linebreak                   " Break long lines by word
 set cursorline                  " Shows the actual cursor line
@@ -128,15 +127,11 @@ let g:fzf_layout = { 'down': '~50%' }
 " Search the selected word
 nmap <C-i> :Ag! "\b<cword>\b" <CR>
 " Search a given word
-nmap <C-b> :Ag!<SPACE>
+nmap <C-b> :Ag! -Q<SPACE>
 " Search by filename
 nmap <C-p> :Files<CR>
 
 " Ale
-let g:ale_sign_error = ''
-let g:ale_echo_msg_error_str = ''
-let g:ale_sign_warning = ''
-let g:ale_echo_msg_warning_str = ''
 let g:ale_lint_on_text_changed = 'never'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
@@ -150,5 +145,3 @@ autocmd FileType python setlocal completeopt-=preview
 
 " Vim-move
 let g:move_key_modifier = 'C'
-
-" Vim-jsx
