@@ -58,7 +58,7 @@ nmap q <Nop>
 :command! Tabe tabe
 
 " Scrollof (to keep cursor in the middle of the screen)
-set so=22
+set so=20
 
 " Reduce Ctrl+D and Ctrl+U step
 noremap <C-U> 12<C-U>
@@ -89,13 +89,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 Plug 'w0rp/ale'
-Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-system-copy'
 Plug 'suan/vim-instant-markdown'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
@@ -145,3 +145,16 @@ autocmd FileType python setlocal completeopt-=preview
 
 " Vim-move
 let g:move_key_modifier = 'C'
+
+" Vim-jsx
+let g:jsx_ext_required = 0
+
+" Vim-system-copy
+nmap <leader>j <Plug>SystemCopy
+nmap <leader>p <Plug>SystemPaste
+
+" Indent guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
