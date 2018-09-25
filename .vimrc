@@ -96,6 +96,7 @@ Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-system-copy'
 Plug 'suan/vim-instant-markdown'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
@@ -154,7 +155,7 @@ nmap <leader>j <Plug>SystemCopy
 nmap <leader>p <Plug>SystemPaste
 
 " Indent guides
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
