@@ -14,6 +14,7 @@ set laststatus=2                " Enable airline
 set backspace=indent,eol,start
 set linebreak                   " Break long lines by word
 set cursorline                  " Shows the actual cursor line
+set paste                       " Avoids vim become crazy with paste indent
 
 " ###############  Turn Off Swap Files ###############
 set noswapfile
@@ -58,7 +59,7 @@ nmap q <Nop>
 :command! Tabe tabe
 
 " Scrollof (to keep cursor in the middle of the screen)
-set so=20
+set so=6
 
 " Reduce Ctrl+D and Ctrl+U step
 noremap <C-U> 12<C-U>
