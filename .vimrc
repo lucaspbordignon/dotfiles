@@ -14,7 +14,7 @@ set laststatus=2                " Enable airline
 set backspace=indent,eol,start
 set linebreak                   " Break long lines by word
 set cursorline                  " Shows the actual cursor line
-set paste                       " Avoids vim become crazy with paste indent
+" set paste                       " Avoids vim become crazy with paste indent
 
 " ###############  Turn Off Swap Files ###############
 set noswapfile
@@ -98,6 +98,7 @@ Plug 'christoomey/vim-system-copy'
 Plug 'suan/vim-instant-markdown'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'wakatime/vim-wakatime'
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
@@ -140,6 +141,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
 \   'python': ['flake8'],
+\   'elixir': ['credo']
 \}
 
 " Jedi autocompletion
