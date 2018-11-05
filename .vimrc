@@ -61,6 +61,9 @@ nmap q <Nop>
 " Scrollof (to keep cursor in the middle of the screen)
 set so=6
 
+" Toggle paste mode
+set pastetoggle=<C-M>
+
 " Reduce Ctrl+D and Ctrl+U step
 noremap <C-U> 12<C-U>
 noremap <C-D> 12<C-D>
