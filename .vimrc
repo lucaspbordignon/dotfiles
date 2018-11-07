@@ -48,6 +48,9 @@ nnoremap Q <nop>e
 nmap q: <silent>
 nmap K  <silent>
 
+" Remove suspend
+nnoremap <C-Z> <nop>
+
 " Removes the recording qhen press 'q<letter>'
 nmap q <Nop>
 
