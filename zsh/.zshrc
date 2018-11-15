@@ -2,6 +2,10 @@
 autoload -U promptinit; promptinit
 prompt pure
 
+# ZSH autocomplete init
+autoload -U compinit
+compinit
+
 # History
 HISTFILE=~/.zsh_hist
 HISTSIZE=1000
@@ -39,6 +43,9 @@ bindkey '^P' fzf-file-widget
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -s "/Users/lucasbordignon/.scm_breeze/scm_breeze.sh" ] && source "/Users/lucasbordignon/.scm_breeze/scm_breeze.sh"
+
+# Autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Work settings
 export ANDROID_HOME=$HOME/Library/Android/sdk
