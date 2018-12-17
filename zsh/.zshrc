@@ -24,6 +24,11 @@ function cdls {
     builtin cd "$@" && ls
 }
 
+# Allowing to use SCM_breeze path expansion
+function vim {
+    exec_scmb_expand_args /usr/bin/vim $@
+}
+
 bindkey "[C" end-of-line # Option + ->
 bindkey "[D" beginning-of-line # Option + <-
 bindkey "^[a" backward-word # Cmd + <-
