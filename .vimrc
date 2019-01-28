@@ -52,7 +52,13 @@ nmap K  <silent>
 nnoremap <C-Z> <nop>
 
 " Removes the recording qhen press 'q<letter>'
-nmap q <Nop>
+" nmap q <Nop>
+
+" Map buffer-next and buffer-previous
+nmap bp :bp<CR>
+nmap bn :bn<CR>
+nmap gt :bp<CR>
+nmap gT :bn<CR>
 
 " Because everybody makes this mistakes
 :command! WQ wq
@@ -65,7 +71,7 @@ nmap q <Nop>
 set so=6
 
 " Toggle paste mode
-set pastetoggle=<C-M>
+" set pastetoggle=<C-M>
 
 " Reduce Ctrl+D and Ctrl+U step
 noremap <C-U> 12<C-U>
