@@ -57,8 +57,7 @@ nnoremap <C-Z> <nop>
 " Map buffer-next and buffer-previous
 nmap bp :bp<CR>
 nmap bn :bn<CR>
-nmap gt :bp<CR>
-nmap gT :bn<CR>
+nmap bd :bd<CR>
 
 " Because everybody makes this mistakes
 :command! WQ wq
@@ -139,6 +138,7 @@ let g:airline#extensions#branch#enabled=1
 " If Fuzzy Finder is installed using git
 set rtp+=~/.fzf
 let g:fzf_layout = { 'down': '~50%' }
+
 " Search the selected word
 nmap <C-i> :Ag! "\b<cword>\b" <CR>
 " Search a given word
