@@ -54,11 +54,6 @@ nnoremap <C-Z> <nop>
 " Removes the recording qhen press 'q<letter>'
 " nmap q <Nop>
 
-" Map buffer-next and buffer-previous
-nmap bp :bp<CR>
-nmap bn :bn<CR>
-nmap bd :bd<CR>
-
 " Because everybody makes this mistakes
 :command! WQ wq
 :command! Wq wq
@@ -85,6 +80,11 @@ let mapleader=","
 " Open and reload the .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
+
+" Map buffer-next and buffer-previous
+nmap <silent> <leader>bp :bp<CR>
+nmap <silent> <leader>bn :bn<CR>
+nmap <silent> <leader>bd :bd<CR>
 
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
