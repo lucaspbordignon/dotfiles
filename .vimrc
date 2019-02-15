@@ -64,9 +64,6 @@ nnoremap <C-Z> <nop>
 " Scrollof (to keep cursor in the middle of the screen)
 set so=6
 
-" Toggle paste mode
-" set pastetoggle=<C-M>
-
 " Reduce Ctrl+D and Ctrl+U step
 noremap <C-U> 12<C-U>
 noremap <C-D> 12<C-D>
@@ -77,14 +74,18 @@ map wr :%s/\s\+$//e<enter> :w<enter>
 " Change leader to a comma. That means all \x commands turn into ,x
 let mapleader=","
 
+" Toggle paste mode
+set pastetoggle=<leader>p
+
 " Open and reload the .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
 
 " Map buffer-next and buffer-previous
-nmap <silent> <leader>bp :bp<CR>
-nmap <silent> <leader>bn :bn<CR>
-nmap <silent> <leader>bd :bd<CR>
+nmap <leader>bp :bp<CR>
+nmap <leader>bn :bn<CR>
+nmap <leader>bd :bd<CR>
+nmap <leader>bb :Buffer<CR>
 
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
@@ -164,10 +165,6 @@ let g:move_key_modifier = 'C'
 
 " Vim-jsx
 let g:jsx_ext_required = 0
-
-" Vim-system-copy
-nmap <leader>j <Plug>SystemCopy
-nmap <leader>p <Plug>SystemPaste
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 0
