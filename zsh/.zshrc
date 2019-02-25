@@ -29,6 +29,10 @@ function vim {
     exec_scmb_expand_args /usr/bin/vim $@
 }
 
+function rspec {
+    exec_scmb_expand_args rspec $@
+}
+
 bindkey "[C" end-of-line # Option + ->
 bindkey "[D" beginning-of-line # Option + <-
 bindkey "^[a" backward-word # Cmd + <-
