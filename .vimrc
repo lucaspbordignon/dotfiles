@@ -14,7 +14,7 @@ set laststatus=2                " Enable airline
 set backspace=indent,eol,start
 set linebreak                   " Break long lines by word
 set cursorline                  " Shows the actual cursor line
-" set paste                       " Avoids vim become crazy with paste indent
+set cursorcolumn                " Shows the actual cursor column
 
 " ###############  Turn Off Swap Files ###############
 set noswapfile
@@ -108,7 +108,6 @@ Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-system-copy'
 Plug 'suan/vim-instant-markdown'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'wakatime/vim-wakatime'
 Plug 'elixir-editors/vim-elixir'
 
@@ -123,6 +122,7 @@ let g:airline_theme='codedark'
 hi Search cterm=NONE
 hi Search ctermfg=LightGrey
 hi Search ctermbg=DarkYellow
+hi CursorColumn ctermbg=235
 
 " ############### Plugins Settings ###############
 " Open Nerd Tree
