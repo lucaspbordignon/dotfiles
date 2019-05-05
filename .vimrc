@@ -87,6 +87,10 @@ nmap <leader>bn :bn<CR>
 nmap <leader>bd :bd<CR>
 nmap <leader>bb :Buffer<CR>
 
+" Map Orient Vertical & Horizontal
+nmap <leader>ov <C-w>K
+nmap <leader>oh <C-w>H
+
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
 
