@@ -91,6 +91,9 @@ nmap <leader>bb :Buffer<CR>
 nmap <leader>ov <C-w>K
 nmap <leader>oh <C-w>H
 
+" Map end of the phrase to 'f'
+vmap f $
+
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
 
