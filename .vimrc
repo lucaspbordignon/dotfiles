@@ -6,9 +6,9 @@
 "           - vim Fuzzy Finder
 "           - Flake8
 
+" set relativenumber              " Lines relative to the actual line
 set encoding=utf-8
 set number                      " Line numbers
-set relativenumber              " Lines relative to the actual line
 set mouse=a                     " Mouse support
 set laststatus=2                " Enable airline
 set backspace=indent,eol,start
@@ -93,6 +93,9 @@ nmap <leader>oh <C-w>H
 
 " Map end of the phrase to 'f'
 vmap f $
+
+" Apply macros stored at W
+nmap <leader>m @w
 
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
