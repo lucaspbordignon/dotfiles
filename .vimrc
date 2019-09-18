@@ -61,8 +61,11 @@ nnoremap <C-Z> <nop>
 :command! Q q
 :command! Tabe tabe
 
-" Scrollof (to keep cursor in the middle of the screen)
+" Scrolloffset (to keep cursor in the middle of the screen)
 set so=6
+
+" Toggle paste mode
+set pastetoggle=<leader>t
 
 " Reduce Ctrl+D and Ctrl+U step
 noremap <C-U> 12<C-U>
@@ -73,9 +76,6 @@ map wr :%s/\s\+$//e<enter> :w<enter>
 
 " Change leader to a comma. That means all \x commands turn into ,x
 let mapleader=","
-
-" Toggle paste mode
-set pastetoggle=<leader>p
 
 " Open and reload the .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -120,6 +120,21 @@ Plug 'christoomey/vim-system-copy'
 Plug 'suan/vim-instant-markdown'
 Plug 'wakatime/vim-wakatime'
 Plug 'elixir-editors/vim-elixir'
+Plug 'leafgarland/typescript-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'python',
+    \ 'ruby',
+    \ 'html' ] }
 
 call plug#end()
 
@@ -162,10 +177,10 @@ let g:ale_lint_on_text_changed = 'never'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'typescript': ['tsserver'],
 \   'ruby': ['rubocop'],
 \   'python': ['flake8'],
-\   'elixir': ['credo']
-\}
+\   'elixir': ['credo'] }
 
 " Jedi autocompletion
 autocmd FileType python setlocal completeopt-=preview
@@ -181,3 +196,7 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
+
+" Prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.html PrettierAsync
