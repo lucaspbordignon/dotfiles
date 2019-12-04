@@ -120,21 +120,24 @@ Plug 'christoomey/vim-system-copy'
 Plug 'suan/vim-instant-markdown'
 Plug 'wakatime/vim-wakatime'
 Plug 'elixir-editors/vim-elixir'
+Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'burnettk/vim-angular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
-  \ 'for': [
-    \ 'javascript',
-    \ 'typescript',
-    \ 'css',
-    \ 'less',
-    \ 'scss',
-    \ 'json',
-    \ 'python',
-    \ 'ruby',
-    \ 'html' ] }
+ \ 'do': 'yarn install',
+ \ 'branch': 'release/1.x',
+ \ 'for': [
+   \ 'javascript',
+   \ 'typescript',
+   \ 'css',
+   \ 'less',
+   \ 'scss',
+   \ 'json',
+   \ 'python',
+   \ 'ruby',
+   \ 'html' ] }
 
 call plug#end()
 
@@ -142,6 +145,12 @@ call plug#end()
 colorscheme codedark
 syntax on
 let g:airline_theme='codedark'
+
+" For .tsx files on vim
+augroup SyntaxSettings
+  autocmd!
+  autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+augroup END
 
 " Search highlight
 hi Search cterm=NONE
@@ -164,6 +173,7 @@ let g:airline#extensions#branch#enabled=1
 " If Fuzzy Finder is installed using git
 set rtp+=~/.fzf
 let g:fzf_layout = { 'down': '~50%' }
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Search the selected word
 nmap <C-i> :Ag! "\b<cword>\b" <CR>
