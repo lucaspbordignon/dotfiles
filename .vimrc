@@ -26,7 +26,7 @@ set smarttab
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set tabstop=2 " Width of a hard tab(for visualization)
+set tabstop=4 " Width of a hard tab(for visualization)
 
 " ############### Search ###############
 set incsearch       " Find the next match as we type the search
@@ -117,13 +117,11 @@ Plug 'matze/vim-move'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-system-copy'
-Plug 'suan/vim-instant-markdown'
 Plug 'wakatime/vim-wakatime'
 Plug 'elixir-editors/vim-elixir'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'burnettk/vim-angular'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', {
  \ 'do': 'yarn install',
@@ -181,13 +179,15 @@ nmap <C-i> :Ag! "\b<cword>\b" <CR>
 nmap <C-b> :Ag! -Q<SPACE>
 " Search by filename
 nmap <C-p> :Files<CR>
+" Search current file path
+nmap <C-f> :NERDTreeFind %:p <CR>
 
 " Ale
 let g:ale_lint_on_text_changed = 'never'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tsserver'],
+\   'typescript': ['tsserver', 'tslint'],
 \   'ruby': ['rubocop'],
 \   'python': ['flake8'],
 \   'elixir': ['credo'] }
