@@ -22,11 +22,19 @@ set nobackup
 set nowb
 
 " ############## Indentation ###############
-set smarttab
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+" Using tabs
+"
+set shiftwidth=4
 set tabstop=4 " Width of a hard tab(for visualization)
+set expandtab
+
+" Using spaces
+"
+" set smarttab
+" set shiftwidth=2 " Number of spaces added when tab is clicked
+" set softtabstop=2
+" set expandtab " Sets spaces when the tab is clicked
+" set tabstop=2 " Width of a hard tab(for visualization)
 
 " ############### Search ###############
 set incsearch       " Find the next match as we type the search
@@ -97,6 +105,9 @@ vmap f $
 " Apply macros stored at W
 nmap <leader>m @w
 
+" Add find/replace command with leader + r
+nmap <leader>rr :%s/<find>/<replace>/gc
+
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -121,6 +132,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'elixir-editors/vim-elixir'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi' " Typescript autocomplete
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', {
