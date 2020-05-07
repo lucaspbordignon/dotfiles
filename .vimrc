@@ -111,43 +111,39 @@ nmap <leader>rr :%s/<find>/<replace>/gc
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" ### Navigation ###
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " Folder navigation
+Plug 'editorconfig/editorconfig-vim' " Editorconfig plugin
+Plug 'rking/ag.vim' " Filsystem searcher as ack
+Plug 'junegunn/fzf.vim' " Fuzzy finder for text
+Plug 'christoomey/vim-system-copy' " Keep vim and system clipboards
+
+" ### Style ###
 Plug 'bling/vim-airline' " Status bar
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tomasiser/vim-code-dark'
+Plug 'vim-airline/vim-airline-themes' " Status bar theme
+Plug 'tomasiser/vim-code-dark' " Darcula code colors
+Plug 'prettier/vim-prettier' " Prettier for Javascript
+
+" ### Auto-Complete ###
 Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'alvan/vim-closetag' " HTML tags completion
-Plug 'editorconfig/editorconfig-vim'
-Plug 'rking/ag.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'davidhalter/jedi-vim'
-Plug 'ervandew/supertab'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-commentary'
-Plug 'matze/vim-move'
-Plug 'elzr/vim-json'
-Plug 'mxw/vim-jsx'
-Plug 'christoomey/vim-system-copy'
-Plug 'wakatime/vim-wakatime'
-Plug 'elixir-editors/vim-elixir'
-Plug 'jparise/vim-graphql'
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi' " Typescript autocomplete
-Plug 'pangloss/vim-javascript'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prettier/vim-prettier', {
- \ 'do': 'yarn install',
- \ 'branch': 'release/1.x',
- \ 'for': [
-   \ 'javascript',
-   \ 'typescript',
-   \ 'css',
-   \ 'less',
-   \ 'scss',
-   \ 'json',
-   \ 'python',
-   \ 'ruby',
-   \ 'html' ] }
+Plug 'ervandew/supertab' " Auto-complete with tab
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
+
+" ### Linting ###
+Plug 'w0rp/ale' " Linter
+
+" ### Navigation ###
+Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
+Plug 'matze/vim-move' " Move blocks with <c-j> and <c-k>
+
+" ### Highlight ###
+Plug 'elzr/vim-json' " Improved highlight on JSON
+Plug 'elixir-editors/vim-elixir' " Improved highlight on Elixir
+Plug 'jparise/vim-graphql' " Improved highlight on GraphQL
+Plug 'leafgarland/typescript-vim' " Improved highlight on Typescript
+Plug 'pangloss/vim-javascript' " Improved highlight on Javascript
+Plug 'mxw/vim-jsx' " Improved highlight for JSX files
 
 call plug#end()
 
@@ -172,6 +168,7 @@ hi CursorColumn ctermbg=235
 " Open Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
+let NERDTreeWinSize=50
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -196,16 +193,14 @@ nmap <C-f> :NERDTreeFind %:p <CR>
 
 " Ale
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_pattern_options = {'\.component.html$': {'ale_enabled': 0}} " Disable for angular
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'typescript': ['tsserver', 'tslint'],
-\   'ruby': ['rubocop'],
-\   'python': ['flake8'],
-\   'elixir': ['credo'] }
-
-" Jedi autocompletion
-autocmd FileType python setlocal completeopt-=preview
+            \   'javascript': ['eslint'],
+            \   'typescript': ['tsserver', 'tslint'],
+            \   'ruby': ['rubocop'],
+            \   'python': ['flake8'],
+            \   'elixir': ['credo'] }
 
 " Vim-move
 let g:move_key_modifier = 'C'
@@ -221,4 +216,5 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
 
 " Prettier
 let g:prettier#autoformat = 0
+let g:prettier#quickfix_enabled=0 " Disable Prettier error console
 autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.html PrettierAsync
