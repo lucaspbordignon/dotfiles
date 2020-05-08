@@ -16,7 +16,6 @@ setopt NO_HUP
 
 alias faustop="htop"
 alias cd=cdls
-alias ls='ls -G'
 alias :q=exit
 
 # Function to execute a 'cd' and, after that, a 'ls'
@@ -57,7 +56,9 @@ bindkey '^P' fzf-file-widget
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Work settings
-export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_HOME="/usr/local/share/android-sdk"
 export PATH=/opt/cuda/bin:${HOME}/.rbenv/bin:${PATH}
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
