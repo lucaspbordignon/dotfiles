@@ -218,3 +218,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
 let g:prettier#autoformat = 0
 let g:prettier#quickfix_enabled=0 " Disable Prettier error console
 autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.html PrettierAsync
+
+" coc.nvim
+"
+" Go to references
+nmap <silent> gr <Plug>(coc-references)
