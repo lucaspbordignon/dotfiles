@@ -99,6 +99,9 @@ nmap <leader>bb :Buffer<CR>
 nmap <leader>ov <C-w>K
 nmap <leader>oh <C-w>H
 
+" Clear highlight
+nmap <leader>c :noh<CR>
+
 " Map end of the phrase to 'f'
 vmap f $
 
@@ -142,6 +145,7 @@ Plug 'elzr/vim-json' " Improved highlight on JSON
 Plug 'elixir-editors/vim-elixir' " Improved highlight on Elixir
 Plug 'jparise/vim-graphql' " Improved highlight on GraphQL
 Plug 'leafgarland/typescript-vim' " Improved highlight on Typescript
+Plug 'peitalin/vim-jsx-typescript' " Improved highlight for TSX files
 Plug 'pangloss/vim-javascript' " Improved highlight on Javascript
 Plug 'mxw/vim-jsx' " Improved highlight for JSX files
 
@@ -151,12 +155,6 @@ call plug#end()
 colorscheme codedark
 syntax on
 let g:airline_theme='codedark'
-
-" For .tsx files on vim
-augroup SyntaxSettings
-  autocmd!
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript
-augroup END
 
 " Search highlight
 hi Search cterm=NONE
