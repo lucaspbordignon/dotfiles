@@ -24,17 +24,17 @@ set nowb
 " ############## Indentation ###############
 " Using tabs
 "
-set shiftwidth=4
-set tabstop=4 " Width of a hard tab(for visualization)
-set expandtab
+" set shiftwidth=4
+" set tabstop=4 " Width of a hard tab(for visualization)
+" set expandtab
 
 " Using spaces
 "
-" set smarttab
-" set shiftwidth=2 " Number of spaces added when tab is clicked
-" set softtabstop=2
-" set expandtab " Sets spaces when the tab is clicked
-" set tabstop=2 " Width of a hard tab(for visualization)
+set smarttab
+set shiftwidth=2 " Number of spaces added when tab is clicked
+set softtabstop=2
+set expandtab " Sets spaces when the tab is clicked
+set tabstop=2 " Width of a hard tab(for visualization)
 
 " ############### Search ###############
 set incsearch       " Find the next match as we type the search
@@ -102,6 +102,9 @@ nmap <leader>oh <C-w>H
 " Clear highlight
 nmap <leader>c :noh<CR>
 
+" Color Highlight
+nmap <leader>ch :ColorHighlight<CR>
+
 " Map end of the phrase to 'f'
 vmap f $
 
@@ -148,6 +151,7 @@ Plug 'leafgarland/typescript-vim' " Improved highlight on Typescript
 Plug 'peitalin/vim-jsx-typescript' " Improved highlight for TSX files
 Plug 'pangloss/vim-javascript' " Improved highlight on Javascript
 Plug 'mxw/vim-jsx' " Improved highlight for JSX files
+Plug 'chrisbra/Colorizer' " Show RGB colors on vim
 
 call plug#end()
 
