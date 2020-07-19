@@ -69,6 +69,11 @@ nnoremap <C-Z> <nop>
 :command! Q q
 :command! Tabe tabe
 
+" Enforce Ctrl + C to act as Esc and trigger abbreviations
+vnoremap <C-c> <Esc>
+nnoremap <C-c> <Esc>
+inoremap <C-c> <Esc>
+
 " Scrolloffset (to keep cursor in the middle of the screen)
 set so=6
 
