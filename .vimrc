@@ -136,7 +136,7 @@ Plug 'tomasiser/vim-code-dark' " Darcula code colors
 Plug 'prettier/vim-prettier' " Prettier for Javascript
 
 " ### Auto-Complete ###
-Plug 'rstacruz/vim-closer' " Vim pairs autocompletion
+Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'alvan/vim-closetag' " HTML tags completion
 Plug 'ervandew/supertab' " Auto-complete with tab
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
