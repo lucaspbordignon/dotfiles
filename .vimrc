@@ -67,6 +67,7 @@ nnoremap <C-Z> <nop>
 :command! Wq wq
 :command! W w
 :command! Q q
+:command! Qa qa
 :command! Tabe tabe
 
 " Enforce Ctrl + C to act as Esc and trigger abbreviations
@@ -157,6 +158,8 @@ Plug 'peitalin/vim-jsx-typescript' " Improved highlight for TSX files
 Plug 'pangloss/vim-javascript' " Improved highlight on Javascript
 Plug 'mxw/vim-jsx' " Improved highlight for JSX files
 Plug 'chrisbra/Colorizer' " Show RGB colors on vim
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " Markdown preview
+
 
 call plug#end()
 
@@ -230,3 +233,9 @@ autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.html Pret
 "
 " Go to references
 nmap <silent> gr <Plug>(coc-references)
+
+" Nvim Markdown preview
+nmap <leader>md :MarkdownPreview<CR>
+
+let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 1
