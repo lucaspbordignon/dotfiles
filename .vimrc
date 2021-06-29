@@ -141,6 +141,7 @@ Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'alvan/vim-closetag' " HTML tags completion
 Plug 'ervandew/supertab' " Auto-complete with tab
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
+Plug 'AndrewRadev/tagalong.vim' " Auto replace tags
 
 " ### Linting ###
 Plug 'w0rp/ale' " Linter
