@@ -170,9 +170,10 @@ syntax on
 let g:airline_theme='codedark'
 
 " Search highlight
+" Reference: https://jonasjacek.github.io/colors
 hi Search cterm=NONE
 hi Search ctermfg=LightGrey
-hi Search ctermbg=DarkYellow
+hi Search ctermbg=130
 hi CursorColumn ctermbg=235
 
 " ############### Plugins Settings ###############
