@@ -161,7 +161,6 @@ Plug 'mxw/vim-jsx' " Improved highlight for JSX files
 Plug 'chrisbra/Colorizer' " Show RGB colors on vim
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " Markdown preview
 
-
 call plug#end()
 
 " ############### Theme ###############

@@ -28,6 +28,14 @@ configure_scmbreeze()
   source ~/.zshrc
 }
 
+configure_brew()
+{
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew install pyenv rbenv nvm yarn
+  nvm install --lts
+}
+
+configure_brew
 configure_zsh
 configure_vim
 configure_scmbreeze
