@@ -141,6 +141,7 @@ Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'alvan/vim-closetag' " HTML tags completion
 Plug 'ervandew/supertab' " Auto-complete with tab
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'AndrewRadev/tagalong.vim' " Auto replace tags
 
 " ### Linting ###
@@ -149,6 +150,8 @@ Plug 'w0rp/ale' " Linter
 " ### Navigation ###
 Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
 Plug 'matze/vim-move' " Move blocks with <c-j> and <c-k>
+Plug 'thoughtbot/vim-rspec' " Run rspec specs from VIM
+
 
 " ### Highlight ###
 Plug 'elzr/vim-json' " Improved highlight on JSON
@@ -159,7 +162,7 @@ Plug 'peitalin/vim-jsx-typescript' " Improved highlight for TSX files
 Plug 'pangloss/vim-javascript' " Improved highlight on Javascript
 Plug 'mxw/vim-jsx' " Improved highlight for JSX files
 Plug 'chrisbra/Colorizer' " Show RGB colors on vim
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' } " Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] } " Markdown preview
 
 call plug#end()
 
@@ -234,9 +237,16 @@ autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.html Pret
 "
 " Go to references
 nmap <silent> gr <Plug>(coc-references)
+" Auto-import from TAB
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Nvim Markdown preview
 nmap <leader>md :MarkdownPreview<CR>
 
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
+
+
+" Rspec
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
