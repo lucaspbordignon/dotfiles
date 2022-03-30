@@ -245,7 +245,6 @@ nmap <leader>md :MarkdownPreview<CR>
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
 
-
 " Rspec
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>

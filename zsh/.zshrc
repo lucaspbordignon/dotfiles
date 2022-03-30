@@ -33,10 +33,8 @@ function rspec {
     exec_scmb_expand_args rspec $@
 }
 
-bindkey "[C" end-of-line # Option + ->
-bindkey "[D" beginning-of-line # Option + <-
-bindkey "^[a" backward-word # Cmd + <-
-bindkey "^[e" forward-word # Cmd + ->
+bindkey "[C" forward-word # Option + ->
+bindkey "[D" backward-word # Option + <-
 
 # FZF configs
 # Ctrl + R -> Searches the last commands
