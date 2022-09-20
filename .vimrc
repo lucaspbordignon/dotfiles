@@ -134,12 +134,11 @@ Plug 'christoomey/vim-system-copy' " Keep vim and system clipboards
 Plug 'bling/vim-airline' " Status bar
 Plug 'vim-airline/vim-airline-themes' " Status bar theme
 Plug 'tomasiser/vim-code-dark' " Darcula code colors
-Plug 'prettier/vim-prettier' " Prettier for Javascript
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier for Javascript
 
 " ### Auto-Complete ###
 Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'alvan/vim-closetag' " HTML tags completion
-Plug 'ervandew/supertab' " Auto-complete with tab
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
 Plug 'AndrewRadev/tagalong.vim' " Auto replace tags
 
@@ -150,7 +149,6 @@ Plug 'w0rp/ale' " Linter
 Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
 Plug 'matze/vim-move' " Move blocks with <c-j> and <c-k>
 Plug 'thoughtbot/vim-rspec' " Run rspec specs from VIM
-
 
 " ### Highlight ###
 Plug 'elzr/vim-json' " Improved highlight on JSON
@@ -237,7 +235,9 @@ autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.html Pret
 " Go to references
 nmap <silent> gr <Plug>(coc-references)
 " Auto-import from TAB
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 
 " Nvim Markdown preview
 nmap <leader>md :MarkdownPreview<CR>
