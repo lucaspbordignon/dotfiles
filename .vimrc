@@ -164,6 +164,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for':
 call plug#end()
 
 " ############### Theme ###############
+let g:codedark_transparent=1
 colorscheme codedark
 syntax on
 let g:airline_theme='codedark'
