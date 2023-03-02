@@ -115,6 +115,17 @@ nmap <leader>m @w
 " Add find/replace command with leader + r
 nmap <leader>rr :%s/<find>/<replace>/gc
 
+" Automatically set paste mode
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -131,14 +142,12 @@ Plug 'tomasiser/vim-code-dark' " Darcula code colors
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier for Javascript
 
 " ### Auto-Complete ###
-Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
-Plug 'alvan/vim-closetag' " HTML tags completion
+"Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
 Plug 'AndrewRadev/tagalong.vim' " Auto replace tags
 
 " ### Navigation ###
 Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
-Plug 'matze/vim-move' " Move blocks with <c-j> and <c-k>
 Plug 'thoughtbot/vim-rspec' " Run rspec specs from VIM
 
 " ### Highlight ###
@@ -191,9 +200,10 @@ nmap <C-b> :Ag! --ignore sorbet/ -Q<SPACE>
 nmap <C-p> :Files<CR>
 " Search current file path
 nmap <C-f> :NERDTreeFind %:p <CR>
-
-" Vim-move
-let g:move_key_modifier = 'C'
+" Move selected lines up
+xnoremap <C-k> :m-2<CR>gv=gv
+" Move selected lines down
+xnoremap <C-j> :m'>+<CR>gv=gv
 
 " Vim-jsx
 let g:jsx_ext_required = 0
