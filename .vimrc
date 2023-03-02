@@ -4,9 +4,7 @@
 " Requires:
 "           - The_silver_searcher package
 "           - vim Fuzzy Finder
-"           - Flake8
 
-" set relativenumber              " Lines relative to the actual line
 set encoding=utf-8
 set number                      " Line numbers
 set mouse=a                     " Mouse support
@@ -58,9 +56,6 @@ nmap K  <silent>
 
 " Remove suspend
 nnoremap <C-Z> <nop>
-
-" Removes the recording qhen press 'q<letter>'
-" nmap q <Nop>
 
 " Because everybody makes this mistakes
 :command! WQ wq
@@ -125,7 +120,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " ### Navigation ###
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " Folder navigation
-Plug 'editorconfig/editorconfig-vim' " Editorconfig plugin
 Plug 'rking/ag.vim' " Filsystem searcher as ack
 Plug 'junegunn/fzf.vim' " Fuzzy finder for text
 Plug 'christoomey/vim-system-copy' " Keep vim and system clipboards
@@ -142,9 +136,6 @@ Plug 'alvan/vim-closetag' " HTML tags completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
 Plug 'AndrewRadev/tagalong.vim' " Auto replace tags
 
-" ### Linting ###
-Plug 'w0rp/ale' " Linter
-
 " ### Navigation ###
 Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
 Plug 'matze/vim-move' " Move blocks with <c-j> and <c-k>
@@ -152,11 +143,9 @@ Plug 'thoughtbot/vim-rspec' " Run rspec specs from VIM
 
 " ### Highlight ###
 Plug 'elzr/vim-json' " Improved highlight on JSON
-Plug 'elixir-editors/vim-elixir' " Improved highlight on Elixir
 Plug 'jparise/vim-graphql' " Improved highlight on GraphQL
 Plug 'leafgarland/typescript-vim' " Improved highlight on Typescript
 Plug 'peitalin/vim-jsx-typescript' " Improved highlight for TSX files
-Plug 'pangloss/vim-javascript' " Improved highlight on Javascript
 Plug 'mxw/vim-jsx' " Improved highlight for JSX files
 Plug 'chrisbra/Colorizer' " Show RGB colors on vim
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] } " Markdown preview
@@ -192,27 +181,16 @@ let g:airline#extensions#branch#enabled=1
 " If Fuzzy Finder is installed using git
 set rtp+=~/.fzf
 let g:fzf_layout = { 'down': '~50%' }
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --ignore sorbet/ -g ""'
 
 " Search the selected word
 nmap <C-i> :Ag! "\b<cword>\b" <CR>
 " Search a given word
-nmap <C-b> :Ag! -Q<SPACE>
+nmap <C-b> :Ag! --ignore sorbet/ -Q<SPACE>
 " Search by filename
 nmap <C-p> :Files<CR>
 " Search current file path
 nmap <C-f> :NERDTreeFind %:p <CR>
-
-" Ale
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_pattern_options = {'\.component.html$': {'ale_enabled': 0}} " Disable for angular
-let g:airline#extensions#ale#enabled = 1
-let g:ale_linters = {
-            \   'javascript': ['eslint'],
-            \   'typescript': ['tsserver', 'tslint'],
-            \   'ruby': ['rubocop'],
-            \   'python': ['flake8'],
-            \   'elixir': ['credo'] }
 
 " Vim-move
 let g:move_key_modifier = 'C'
@@ -238,12 +216,14 @@ nmap <silent> gr <Plug>(coc-references)
 " Auto-import from TAB
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Enforced servers to be installed
+let g:coc_global_extensions = ['coc-solargraph', 'coc-tsserver', 'coc-json']
 
 
 " Nvim Markdown preview
-nmap <leader>md :MarkdownPreview<CR>
+" nmap <leader>md :MarkdownPreview<CR>
 
-let g:mkdp_auto_start = 0
+let g:mkdp_auto_start = 1
 let g:mkdp_auto_close = 1
 
 " Rspec
