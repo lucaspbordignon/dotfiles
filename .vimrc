@@ -115,6 +115,12 @@ nmap <leader>m @w
 " Add find/replace command with leader + r
 nmap <leader>rr :%s/<find>/<replace>/gc
 
+" REPLACER - Find /"KEY":/ and replace with /KEY:/
+nmap <leader>rk :%s/"\(.*\)":/\1:/g <CR>
+
+" REPLACER - Find /EVERY LINE/ and replace with /EVERY LINE + char:/
+nmap <leader>rl :%norm A<CHARACTER>
+
 " Automatically set paste mode
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
@@ -190,12 +196,12 @@ let g:airline#extensions#branch#enabled=1
 " If Fuzzy Finder is installed using git
 set rtp+=~/.fzf
 let g:fzf_layout = { 'down': '~50%' }
-let $FZF_DEFAULT_COMMAND = 'ag --ignore sorbet/ -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --ignore sorbet/ --ignore spec/fixtures/ --ignore /log -g "" | sort'
 
 " Search the selected word
 nmap <C-i> :Ag! "\b<cword>\b" <CR>
 " Search a given word
-nmap <C-b> :Ag! --ignore sorbet/ -Q<SPACE>
+nmap <C-b> :Ag! --ignore sorbet/ --ignore spec/fixtures/ --ignore /log -Q<SPACE>
 " Search by filename
 nmap <C-p> :Files<CR>
 " Search current file path
@@ -227,13 +233,22 @@ nmap <silent> gr <Plug>(coc-references)
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Enforced servers to be installed
-let g:coc_global_extensions = ['coc-solargraph', 'coc-tsserver', 'coc-json']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json']
+
+" Git keep local (mine)
+nmap gkm <Plug>(coc-git-keepincoming)
+" Git keep remote (head)
+nmap gkh <Plug>(coc-git-keepcurrent)
+" Git next conflict
+nmap gn <Plug>(coc-git-nextconflict)
+" Git previous conflict
+nmap gp <Plug>(coc-git-prevconflict)
 
 
 " Nvim Markdown preview
-" nmap <leader>md :MarkdownPreview<CR>
+nmap <leader>md :MarkdownPreview<CR>
 
-let g:mkdp_auto_start = 1
+let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
 
 " Rspec
