@@ -121,6 +121,9 @@ nmap <leader>rk :%s/"\(.*\)":/\1:/g <CR>
 " REPLACER - Find /EVERY LINE/ and replace with /EVERY LINE + char:/
 nmap <leader>rl :%norm A<CHARACTER>
 
+" REPLACER - Break long lines into 80 chars chunks
+nmap <leader>rlo :s/\v(.{80})/\1\r/g <CR>
+
 " Automatically set paste mode
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
@@ -148,9 +151,10 @@ Plug 'tomasiser/vim-code-dark' " Darcula code colors
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier for Javascript
 
 " ### Auto-Complete ###
-"Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
+Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
 Plug 'AndrewRadev/tagalong.vim' " Auto replace tags
+Plug 'github/copilot.vim'
 
 " ### Navigation ###
 Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
@@ -233,7 +237,7 @@ nmap <silent> gr <Plug>(coc-references)
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Enforced servers to be installed
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', '@yaegassy/coc-tailwindcss3']
 
 " Git keep local (mine)
 nmap gkm <Plug>(coc-git-keepincoming)
