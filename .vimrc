@@ -159,6 +159,7 @@ Plug 'github/copilot.vim'
 " ### Navigation ###
 Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
 Plug 'thoughtbot/vim-rspec' " Run rspec specs from VIM
+Plug 'brooth/far.vim' " Search and replace
 
 " ### Highlight ###
 Plug 'elzr/vim-json' " Improved highlight on JSON
@@ -191,7 +192,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeWinSize=50
 
 " air-line
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled=1
 
@@ -237,7 +238,7 @@ nmap <silent> gr <Plug>(coc-references)
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Enforced servers to be installed
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', '@yaegassy/coc-tailwindcss3']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', '@yaegassy/coc-tailwindcss3', 'coc-spell-checker']
 
 " Git keep local (mine)
 nmap gkm <Plug>(coc-git-keepincoming)
@@ -258,3 +259,9 @@ let g:mkdp_auto_close = 1
 " Rspec
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
+
+" Find and Replace
+let g:far#preview_window_height = 50
+
+nnoremap <silent> <leader>ff :Farf<cr>
+nnoremap <silent> <leader>fr :Farr<cr>
