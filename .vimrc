@@ -5,6 +5,7 @@
 "           - The_silver_searcher package
 "           - vim Fuzzy Finder
 
+set hidden
 set encoding=utf-8
 set number                      " Line numbers
 set mouse=a                     " Mouse support
@@ -143,23 +144,23 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " Folder navigation
 Plug 'rking/ag.vim' " Filsystem searcher as ack
 Plug 'junegunn/fzf.vim' " Fuzzy finder for text
 Plug 'christoomey/vim-system-copy' " Keep vim and system clipboards
+Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
+Plug 'thoughtbot/vim-rspec' " Run rspec specs from VIM
+Plug 'brooth/far.vim' " Search and replace
+"Plug 'mg979/vim-visual-multi'
 
 " ### Style ###
 Plug 'bling/vim-airline' " Status bar
 Plug 'vim-airline/vim-airline-themes' " Status bar theme
 Plug 'tomasiser/vim-code-dark' " Darcula code colors
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier for Javascript
+Plug 'themaxmarchuk/tailwindcss-colors.nvim'
 
 " ### Auto-Complete ###
 Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Main autocompletion
 Plug 'AndrewRadev/tagalong.vim' " Auto replace tags
 Plug 'github/copilot.vim'
-
-" ### Navigation ###
-Plug 'tpope/vim-commentary' " Comment blocks with <g-c>
-Plug 'thoughtbot/vim-rspec' " Run rspec specs from VIM
-Plug 'brooth/far.vim' " Search and replace
 
 " ### Highlight ###
 Plug 'elzr/vim-json' " Improved highlight on JSON
@@ -169,6 +170,7 @@ Plug 'peitalin/vim-jsx-typescript' " Improved highlight for TSX files
 Plug 'mxw/vim-jsx' " Improved highlight for JSX files
 Plug 'chrisbra/Colorizer' " Show RGB colors on vim
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] } " Markdown preview
+Plug 'prisma/vim-prisma' " Prisma highlight
 
 call plug#end()
 
@@ -200,8 +202,10 @@ let g:airline#extensions#branch#enabled=1
 "
 " If Fuzzy Finder is installed using git
 set rtp+=~/.fzf
-let g:fzf_layout = { 'down': '~50%' }
+"let g:fzf_layout = { 'down': '~50%' }
+let g:fzf_layout = { 'window': { 'width': 0.75, 'height': 0.75, 'relative': v:true  }  }
 let $FZF_DEFAULT_COMMAND = 'ag --ignore sorbet/ --ignore spec/fixtures/ --ignore /log -g "" | sort'
+
 
 " Search the selected word
 nmap <C-i> :Ag! "\b<cword>\b" <CR>
@@ -265,3 +269,7 @@ let g:far#preview_window_height = 50
 
 nnoremap <silent> <leader>ff :Farf<cr>
 nnoremap <silent> <leader>fr :Farr<cr>
+
+" Multi-cursor
+let g:VM_maps = {}
+let g:VM_maps['Find Under'] = '<C-r>' " replace C-n

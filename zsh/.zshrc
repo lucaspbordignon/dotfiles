@@ -9,10 +9,10 @@ autoload -U compinit
 compinit
 
 # History
-HISTFILE=~/.zsh_hist
-HISTSIZE=1000
-SAVEHIST=1000
-EDITOR=vim
+export HISTFILE=~/.zsh_hist
+export HISTSIZE=1000
+export SAVEHIST=1000
+export EDITOR=vim
 
 # Allows jobs to run even if the shell is killed
 setopt NO_HUP
@@ -59,10 +59,11 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Work settings
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-export ANDROID_HOME="/usr/local/share/android-sdk"
+export ANDROID_HOME="/Users/lucasbordignon/Library/Android/sdk"
 export PATH=/opt/cuda/bin:${HOME}/.rbenv/bin:${PATH}
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
 
 eval "$(rbenv init -)"
 
