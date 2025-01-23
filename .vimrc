@@ -58,7 +58,7 @@ nmap K  <silent>
 " Remove suspend
 nnoremap <C-Z> <nop>
 
-" Because everybody makes this mistakes
+" Because everybody makes these mistakes
 :command! WQ wq
 :command! Wq wq
 :command! W w
@@ -75,7 +75,7 @@ inoremap <C-c> <Esc>
 set so=6
 
 " Toggle paste mode
-set pastetoggle=<leader>t
+nmap <leader>pm :set paste!<CR>
 
 " Reduce Ctrl+D and Ctrl+U step
 noremap <C-U> 12<C-U>
@@ -88,7 +88,7 @@ map wr :%s/\s\+$//e<enter> :w<enter>
 let mapleader=","
 
 " Open and reload the .vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>ev :e ~/.vimrc<CR>
 nmap <silent> <leader>rv :so $MYVIMRC<CR>
 
 " Map buffer-next and buffer-previous
@@ -126,15 +126,15 @@ nmap <leader>rl :%norm A<CHARACTER>
 nmap <leader>rlo :s/\v(.{80})/\1\r/g <CR>
 
 " Automatically set paste mode
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
+"let &t_SI .= "\<Esc>[?2004h"
+"let &t_EI .= "\<Esc>[?2004l"
+"inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+"
+"function! XTermPasteBegin()
+"  set pastetoggle=<Esc>[201~
+"  set paste
+"  return ""
+"endfunction
 
 " ############### Plugins ###############
 call plug#begin('~/.local/share/nvim/plugged')
@@ -204,13 +204,15 @@ let g:airline#extensions#branch#enabled=1
 set rtp+=~/.fzf
 "let g:fzf_layout = { 'down': '~50%' }
 let g:fzf_layout = { 'window': { 'width': 0.75, 'height': 0.75, 'relative': v:true  }  }
-let $FZF_DEFAULT_COMMAND = 'ag --ignore sorbet/ --ignore spec/fixtures/ --ignore /log -g "" | sort'
+let g:fzf_preview_window = ['right,30%']
+
+let $FZF_DEFAULT_COMMAND = 'ag --ignore node_modules/ --ignore sorbet/ --ignore spec/fixtures/ --ignore /log -g "" | sort'
 
 
 " Search the selected word
-nmap <C-i> :Ag! "\b<cword>\b" <CR>
+nmap <C-i> :Ag! --ignore node_modules/ "\b<cword>\b" <CR>
 " Search a given word
-nmap <C-b> :Ag! --ignore sorbet/ --ignore spec/fixtures/ --ignore /log -Q<SPACE>
+nmap <C-b> :Ag! --ignore node_modules/ --ignore sorbet/ --ignore spec/fixtures/ --ignore /log -Q<SPACE>
 " Search by filename
 nmap <C-p> :Files<CR>
 " Search current file path
@@ -232,7 +234,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
 " Prettier
 let g:prettier#autoformat = 0
 let g:prettier#quickfix_enabled=0 " Disable Prettier error console
-autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.html PrettierAsync
+" Execute prettier on the current file
+nmap <leader>pp :Prettier<CR>
 
 " coc.nvim
 "

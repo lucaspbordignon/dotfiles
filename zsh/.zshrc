@@ -28,7 +28,7 @@ function cdls {
 
 # Allowing to use SCM_breeze path expansion
 function vim {
-    exec_scmb_expand_args /usr/bin/vim $@
+    exec_scmb_expand_args nvim $@
 }
 
 function rspec {
