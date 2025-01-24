@@ -1,5 +1,6 @@
 -- ~/.config/nvim/lua/config/lualine.lua
 
+
 local colors = {
   red = '#ca1243',
   grey = '#a0a1a7',
