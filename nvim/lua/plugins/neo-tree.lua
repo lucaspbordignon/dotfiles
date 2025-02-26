@@ -19,11 +19,17 @@ return   {
             hide_gitignored = false,
           },
           use_libuv_file_watcher = true,
+          window = {
+            mappings = {
+              -- Disable the fuzzy finder for search
+              ["/"] = "noop"
+            }
+          }
         },
       })
 
       -- Keymaps
       vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>')
-      vim.keymap.set('n', '<C-f>', ':Neotree reveal<CR>')
+      vim.keymap.set('n', '<C-f>', ':Neotree reveal_force_cwd<CR>')
     end,
   }

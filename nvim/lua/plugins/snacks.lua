@@ -2,7 +2,7 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  version = "2.14.x",
+  version = "2.x.x",
   opts = {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
@@ -13,16 +13,18 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    animate = { enabled = true },
   },
   keys = {
     --
     -- For Go to definition, refer to coc.lua instead
     --
 
+    { "gD", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
     { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
     { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
     { "gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
     { "dx", function() Snacks.dashboard.open(opts) end, desc = "Open dashboard" },
     { "<leader>dd", function() Snacks.dashboard.open(opts) end, desc = "Open dashboard" },
-  },
+  }
 }

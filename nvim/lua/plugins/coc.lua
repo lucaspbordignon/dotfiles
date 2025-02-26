@@ -2,7 +2,7 @@ local M = {
   "neoclide/coc.nvim",
   branch = "master",
   build = "yarn install --frozen-lockfile",
-  enabled = true
+  enabled = false
 }
 
 M.config = function()
@@ -12,7 +12,7 @@ vim.opt.writebackup = false
 
 -- Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 -- delays and poor user experience
-vim.opt.updatetime = 100
+vim.opt.updatetime = 200
 
 -- Always show the signcolumn, otherwise it would shift the text each time
 -- diagnostics appeared/became resolved

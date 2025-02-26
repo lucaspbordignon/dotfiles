@@ -2,13 +2,24 @@ return {
   {
     'echasnovski/mini.nvim',
     version = '*',
-    enabled = false,
+    enabled = true,
     config  = function ()
-      require('mini.completion').setup({
-        delay = { completion = 0, info = 0, signature = 0 },
-        window = { 
-          info = { height = 32, width = 80, border = "rounded" },
-          signature = { height = 32, width = 80, border = "rounded" },
+      require("mini.pairs").setup({
+        -- In which modes mappings from this `config` should be created
+        modes = { insert = true, command = false, terminal = false },
+
+        mappings = {
+          ['('] = { action = 'open', pair = '()', neigh_pattern = '[^\\].' },
+          ['['] = { action = 'open', pair = '[]', neigh_pattern = '[^\\].' },
+          ['{'] = { action = 'open', pair = '{}', neigh_pattern = '[^\\].' },
+
+          [')'] = { action = 'close', pair = '()', neigh_pattern = '[^\\].' },
+          [']'] = { action = 'close', pair = '[]', neigh_pattern = '[^\\].' },
+          ['}'] = { action = 'close', pair = '{}', neigh_pattern = '[^\\].' },
+
+          ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = '[^\\].', register = { cr = false } },
+          ["'"] = { action = 'closeopen', pair = "''", neigh_pattern = '[^%a\\].', register = { cr = false } },
+          ['`'] = { action = 'closeopen', pair = '``', neigh_pattern = '[^\\].', register = { cr = false } },
         },
       })
     end
