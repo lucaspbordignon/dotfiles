@@ -5,7 +5,9 @@ return {
     dependencies = { 'saghen/blink.cmp' },
     config = function()
       require("mason").setup()
-      require("mason-lspconfig").setup()
+      require("mason-lspconfig").setup({
+        automatic_enable = false
+      })
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 

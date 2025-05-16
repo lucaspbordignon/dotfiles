@@ -80,12 +80,15 @@ vim.keymap.set({ 'v', 'n', 'i' }, '<C-j>', ":m'>+<CR>gv=gv")
 vim.keymap.set('n', '<leader>bb', ':Telescope buffers<CR>')
 
 -- Set up the keymap for file picker
---vim.keymap.set('n', '<C-p>', function() require('snacks').picker.pick("files", opts) end, { noremap = true, silent = true })
 vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = 'Telescope file picker' })
 
 -- Set up the keymap for fuzzy finder
---vim.keymap.set('n', '<C-b>', function() require('snacks').picker.grep() end, { noremap = true, silent = true })
+vim.keymap.set('n', '<C-g>', require('fzf-lua').grep, { desc = 'Grep files with pattern' })
 vim.keymap.set('n', '<C-b>', require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
+
+-- LSP keymaps
+vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = 'Telescope go to references' })
+vim.keymap.set('n', 'gD', require('telescope.builtin').lsp_definitions, { desc = 'Telescope go to definitions' })
 
 -- Remove trailing whitespace when saving files
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -121,12 +124,3 @@ vim.opt.scrolloff = 8
 
 -- Open Oil's file tree on Ctrl-N
 vim.keymap.set("n", "<C-o>", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
-
-
-
---
--- TODO LIST
---
--- 1. Make go-to-definition open in a file picker
--- 3. Add the grep command to the file picker, with regex (or get used to the new one)
--- 7. Make Ruby LSP work for real
