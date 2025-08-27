@@ -12,7 +12,7 @@ compinit
 export HISTFILE=~/.zsh_hist
 export HISTSIZE=1000
 export SAVEHIST=1000
-export EDITOR=vim
+export EDITOR=nvim
 
 # Allows jobs to run even if the shell is killed
 setopt NO_HUP

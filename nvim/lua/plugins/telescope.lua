@@ -13,6 +13,22 @@ return {
             mirror = true
           },
         },
+        file_ignore_patterns = {
+          "node_modules",
+          ".git/",
+          ".next/",
+          "dist/",
+          "build/",
+          "vendor/",
+          "spec/fixtures/",
+          "%.jpg",
+          "%.jpeg",
+          "%.png",
+          "%.svg",
+          "%.otf",
+          "%.ttf",
+          "%.webp",
+        }
       },
     })
   end,

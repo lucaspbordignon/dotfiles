@@ -83,12 +83,16 @@ vim.keymap.set('n', '<leader>bb', ':Telescope buffers<CR>')
 vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = 'Telescope file picker' })
 
 -- Set up the keymap for fuzzy finder
-vim.keymap.set('n', '<C-g>', require('fzf-lua').grep, { desc = 'Grep files with pattern' })
+vim.keymap.set('n', '<C-f>', require('fzf-lua').grep, { desc = 'Grep files with pattern' })
 vim.keymap.set('n', '<C-b>', require('telescope.builtin').live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<C-g>', require('telescope.builtin').resume, { desc = 'Telescope live grep resume' })
 
 -- LSP keymaps
 vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = 'Telescope go to references' })
 vim.keymap.set('n', 'gD', require('telescope.builtin').lsp_definitions, { desc = 'Telescope go to definitions' })
+
+-- Set up the keymap for recent files
+-- vim.keymap.set('n', '<C-r>', function() require('snacks').picker.recent() end, { noremap = true, silent = true })
 
 -- Remove trailing whitespace when saving files
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
