@@ -1,0 +1,101 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "puma",
+  "autoupdate": true,
+  "instructions": [
+    "~/.claude/CLAUDE.md",
+    "~/.claude/knowledge/001_who_am_i.md",
+    "~/.claude/knowledge/002_how_do_we_work.md",
+    "~/.claude/knowledge/003_personal_preferences.md"
+  ],
+  "mcp": {
+    "playwright": {
+      "enabled": true,
+      "type": "local",
+      "command": ["npx", "@playwright/mcp@latest"],
+      "environment": {}
+    },
+    "context7": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "ADD YOUR KEY"
+      }
+    },
+    "figma-dev-mode-mcp-server": {
+      "enabled": true,
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "chrome-devtools": {
+      "enabled": true,
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
+      "environment": {}
+    },
+    "shadcn": {
+      "enabled": true,
+      "type": "local",
+      "command": ["npx", "shadcn@latest", "mcp"],
+      "environment": {}
+    }
+  },
+  "permission": {
+    "bash": {
+      "git status": "allow",
+      "git diff": "allow",
+      "ls": "allow",
+      "pwd": "allow",
+      "rm": "ask",
+      "git push": "deny"
+    }
+  },
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "anthropic/claude-opus-4-5",
+      "permission": {
+        "bash": {
+          "*": "allow",
+          "git push *": "ask",
+          "git commit *": "ask",
+          "rm *": "ask"
+        },
+        "edit": "allow",
+        "write": "allow",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "list": "allow",
+        "patch": "allow",
+        "todowrite": "allow",
+        "todoread": "allow",
+        "webfetch": "allow"
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "permission": {
+        "bash": {
+          "cd *": "allow",
+          "git diff *": "allow",
+          "xargs *": "allow",
+          "grep *": "allow",
+          "*": "ask"
+        },
+        "edit": "deny",
+        "write": "deny",
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "list": "allow",
+        "patch": "ask",
+        "todowrite": "allow",
+        "todoread": "allow",
+        "webfetch": "allow"
+      }
+    }
+  },
+  "lsp": {}
+}

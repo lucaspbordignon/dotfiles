@@ -1,0 +1,227 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "vscode_bg": "#1E1E1E",
+    "vscode_fg": "#D4D4D4",
+    "vscode_panel": "#252526",
+    "vscode_border": "#3E3E42",
+    "vscode_border_active": "#007FD4",
+    "vscode_selection": "#264F78",
+    "vscode_comment": "#6A9955",
+    "vscode_keyword": "#569CD6",
+    "vscode_string": "#CE9178",
+    "vscode_number": "#B5CEA8",
+    "vscode_function": "#DCDCAA",
+    "vscode_variable": "#E38200",
+    "vscode_type": "#4EC9B0",
+    "vscode_constant": "#4FC1FF",
+    "vscode_error": "#F44747",
+    "vscode_warning": "#FFCC02",
+    "vscode_info": "#007ACC",
+    "vscode_success": "#89D185",
+    "vscode_muted": "#858585",
+    "vscode_accent": "#007ACC"
+  },
+  "theme": {
+    "primary": {
+      "dark": "vscode_keyword",
+      "light": "vscode_keyword"
+    },
+    "secondary": {
+      "dark": "vscode_variable",
+      "light": "vscode_variable"
+    },
+    "accent": {
+      "dark": "vscode_accent",
+      "light": "vscode_accent"
+    },
+    "error": {
+      "dark": "vscode_error",
+      "light": "vscode_error"
+    },
+    "warning": {
+      "dark": "vscode_warning",
+      "light": "vscode_warning"
+    },
+    "success": {
+      "dark": "vscode_success",
+      "light": "vscode_success"
+    },
+    "info": {
+      "dark": "vscode_info",
+      "light": "vscode_info"
+    },
+    "text": {
+      "dark": "vscode_fg",
+      "light": "#1E1E1E"
+    },
+    "textMuted": {
+      "dark": "vscode_muted",
+      "light": "#6A6A6A"
+    },
+    "background": {
+      "dark": "none",
+      "light": "none"
+    },
+    "backgroundPanel": {
+      "dark": "none",
+      "light": "none"
+    },
+    "backgroundElement": {
+      "dark": "vscode_panel",
+      "light": "#F3F3F3"
+    },
+    "border": {
+      "dark": "vscode_border",
+      "light": "#E7E7E7"
+    },
+    "borderActive": {
+      "dark": "vscode_border_active",
+      "light": "vscode_accent"
+    },
+    "borderSubtle": {
+      "dark": "#2D2D30",
+      "light": "#F0F0F0"
+    },
+    "diffAdded": {
+      "dark": "vscode_success",
+      "light": "vscode_success"
+    },
+    "diffRemoved": {
+      "dark": "vscode_error",
+      "light": "vscode_error"
+    },
+    "diffContext": {
+      "dark": "vscode_muted",
+      "light": "vscode_muted"
+    },
+    "diffHunkHeader": {
+      "dark": "vscode_muted",
+      "light": "vscode_muted"
+    },
+    "diffHighlightAdded": {
+      "dark": "vscode_success",
+      "light": "vscode_success"
+    },
+    "diffHighlightRemoved": {
+      "dark": "vscode_error",
+      "light": "vscode_error"
+    },
+    "diffAddedBg": {
+      "dark": "#1C5C1C30",
+      "light": "#89D18530"
+    },
+    "diffRemovedBg": {
+      "dark": "#5C1C1C30",
+      "light": "#F4474730"
+    },
+    "diffContextBg": {
+      "dark": "vscode_panel",
+      "light": "#F3F3F3"
+    },
+    "diffLineNumber": {
+      "dark": "vscode_muted",
+      "light": "#6A6A6A"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "#1C5C1C30",
+      "light": "#89D18530"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "#5C1C1C30",
+      "light": "#F4474730"
+    },
+    "markdownText": {
+      "dark": "vscode_fg",
+      "light": "#1E1E1E"
+    },
+    "markdownHeading": {
+      "dark": "vscode_keyword",
+      "light": "vscode_keyword"
+    },
+    "markdownLink": {
+      "dark": "vscode_keyword",
+      "light": "vscode_keyword"
+    },
+    "markdownLinkText": {
+      "dark": "vscode_variable",
+      "light": "vscode_variable"
+    },
+    "markdownCode": {
+      "dark": "vscode_string",
+      "light": "vscode_string"
+    },
+    "markdownBlockQuote": {
+      "dark": "vscode_comment",
+      "light": "vscode_comment"
+    },
+    "markdownEmph": {
+      "dark": "vscode_warning",
+      "light": "vscode_warning"
+    },
+    "markdownStrong": {
+      "dark": "vscode_function",
+      "light": "vscode_function"
+    },
+    "markdownHorizontalRule": {
+      "dark": "vscode_border",
+      "light": "#E7E7E7"
+    },
+    "markdownListItem": {
+      "dark": "vscode_keyword",
+      "light": "vscode_keyword"
+    },
+    "markdownListEnumeration": {
+      "dark": "vscode_variable",
+      "light": "vscode_variable"
+    },
+    "markdownImage": {
+      "dark": "vscode_keyword",
+      "light": "vscode_keyword"
+    },
+    "markdownImageText": {
+      "dark": "vscode_variable",
+      "light": "vscode_variable"
+    },
+    "markdownCodeBlock": {
+      "dark": "vscode_fg",
+      "light": "#1E1E1E"
+    },
+    "syntaxComment": {
+      "dark": "vscode_comment",
+      "light": "vscode_comment"
+    },
+    "syntaxKeyword": {
+      "dark": "vscode_keyword",
+      "light": "vscode_keyword"
+    },
+    "syntaxFunction": {
+      "dark": "vscode_function",
+      "light": "vscode_function"
+    },
+    "syntaxVariable": {
+      "dark": "vscode_variable",
+      "light": "vscode_variable"
+    },
+    "syntaxString": {
+      "dark": "vscode_string",
+      "light": "vscode_string"
+    },
+    "syntaxNumber": {
+      "dark": "vscode_number",
+      "light": "vscode_number"
+    },
+    "syntaxType": {
+      "dark": "vscode_type",
+      "light": "vscode_type"
+    },
+    "syntaxOperator": {
+      "dark": "vscode_keyword",
+      "light": "vscode_keyword"
+    },
+    "syntaxPunctuation": {
+      "dark": "vscode_fg",
+      "light": "#1E1E1E"
+    }
+  }
+}
