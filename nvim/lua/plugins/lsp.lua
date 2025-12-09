@@ -14,10 +14,11 @@ return {
       vim.o.updatetime = 450
       vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
-      require("lspconfig").lua_ls.setup({ capabilities = capabilities })
-      require("lspconfig").ts_ls.setup({ capabilities = capabilities })
-      require("lspconfig").tailwindcss.setup({ capabilities = capabilities })
-      -- require("lspconfig").ruby_lsp.setup({ capabilities = capabilities })
+      vim.lsp.enable('cspell')
+      vim.lsp.enable('lua_ls')
+      vim.lsp.enable('ts_ls')
+      vim.lsp.enable('tailwindcss')
+      vim.lsp.enable('sorbet')
     end
   }
 }
