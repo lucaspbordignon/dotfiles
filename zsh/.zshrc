@@ -49,7 +49,7 @@ export FZF_DEFAULT_OPTS='
 '
 bindkey '^P' fzf-file-widget
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 [ -s "/Users/lucasbordignon/.scm_breeze/scm_breeze.sh" ] && source "/Users/lucasbordignon/.scm_breeze/scm_breeze.sh"
 
