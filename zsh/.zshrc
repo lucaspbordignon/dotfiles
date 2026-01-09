@@ -79,3 +79,7 @@ export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="/Users/lucasbordignon/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+#
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+
+export PATH="/Users/lucasbordignon/.bun/bin:$PATH"
